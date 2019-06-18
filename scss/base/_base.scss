@@ -1,0 +1,33 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+  font-family: $font-family--primary;
+  font-size: $base__font-size;
+  line-height: $base__line;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  @include mq($break-t) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+p {
+  color: $gray;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.centered {
+  @extend %centered;
+}
