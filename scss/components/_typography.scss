@@ -2,6 +2,16 @@
 // Typographical Styles
 // ==========================================================================
 
-.test-span {
-  color: $pink;
+.appLogo {
+  font-size: em(24px);
+}
+
+.bold {
+  font-weight: $font-weight--bold;
+  font-size: inherit;
+}
+
+.light {
+  font-weight: $font-weight--thin;
+  font-size: inherit;
 }

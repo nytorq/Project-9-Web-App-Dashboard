@@ -1,3 +1,35 @@
 // ==========================================================================
 // Navigation Styles
 // ==========================================================================
+
+.nav {
+  @include e(top) {
+    position: fixed;
+    top: 0px;
+    background-color: $color-primary;
+    width: 100%;
+    height: 5em;
+    color: $white;
+    z-index: 2;
+    box-shadow: 0 0 6px 3px rgba(darken($color-primary,50%),0.5)
+  }
+
+  @include e(left) {
+    display: none;
+    @include mq($break-t) {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      left: 0;
+      background-color: darken($color-primary, 25%);
+      width: 5em;
+      height: 100%;
+      z-index: 1;
+    }
+
+  }
+}
+
+.nav__top ul {
+  display: flex;
+}

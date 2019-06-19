@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
 .centered {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -418,10 +419,6 @@ ul {
   list-style: none;
   text-align: center;
   padding-left: 0; }
-  @media (min-width: 768px) {
-    ul {
-      display: flex;
-      justify-content: flex-end; } }
 
 p {
   color: #838383; }
@@ -431,7 +428,50 @@ p {
   margin: 0 auto;
   padding: 1.5em; }
 
-.test-span {
-  color: #ff607c; }
+body {
+  background-color: #c4c5e8; }
+
+.nav__top {
+  position: fixed;
+  top: 0px;
+  background-color: #7a7dcc;
+  width: 100%;
+  height: 5em;
+  color: #fff;
+  z-index: 2;
+  box-shadow: 0 0 6px 3px rgba(20, 21, 51, 0.5); }
+.nav__left {
+  display: none; }
+  @media (min-width: 768px) {
+    .nav__left {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      left: 0;
+      background-color: #373a8f;
+      width: 5em;
+      height: 100%;
+      z-index: 1; } }
+
+.nav__top ul {
+  display: flex; }
+
+.appLogo {
+  font-size: 1.5em; }
+
+.bold {
+  font-weight: 700;
+  font-size: inherit; }
+
+.light {
+  font-weight: 100;
+  font-size: inherit; }
+
+.picture__profile {
+  border-radius: 100%;
+  width: 3em; }
+
+#bell {
+  width: 1.5em; }
 
 /*# sourceMappingURL=application.css.map */

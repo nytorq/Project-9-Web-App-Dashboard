@@ -2,31 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Circles UI Kit</title>
+  <title>Unit 9 - Web App Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/application.css">
 </head>
+<!--SVG bell icon-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:none;">
+  <symbol>
+    <path id="bell" fill="#fff" d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"/>
+  </symbol>
+</svg>
+<!--SVG dashboard icon-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"style="display:none;">
+  <symbol>
+    <path id="dashboard" fill="#fff" d="M25 18c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zm1 12c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zm-7 4c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zM28 0H6C3.8 0 2 1.8 2 4v24c0 2.2 1.8 4 4 4h22c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zm2 28c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V8h26v20zm0-22H4V4c0-1.1.9-2 2-2h22c1.1 0 2 .9 2 2v2zM17 18c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2h-2v-2zM9 26c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2H8v-2zm1-4c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-1-4h2v2H8v-2z"/>
+  </symbol>
+</svg>
 
+<nav class="nav__top">
+  <ul>
+    <li>
+      <svg width="32px" height="32px">
+        <use xlink:href="#dashboard"/>
+      </svg>
+    </li>
+    <li><span class="appLogo"><span class="bold">Your</span><span class="light">App</span></span>&trade;</li>
+    <li>
+      <svg width="32px" height="32px">
+        <use xlink:href="#bell"/>
+      </svg>
+    </li>
+    <li>
+      <picture>
+        <img class="picture__profile" src="images/member-2.jpg">
+      </picture>
+    </li>
+    <li>Josh Sullivan</li>
+  </ul>
+</nav>
+<nav class="nav__left">
+  <ul>
+    <li>
+      <svg>
+        <use xlink:href="#dashboard"/>
+      </svg>
+    </li>
+  </ul>
+</nav>
 <body>
   <div class="container">
-    <h1>This is a test to see if the Scss manifest is set up correctly.</h1>
-    <p>If it is is set up correctly, <span class="test-span">this text should be set to pink</span>.</p>
-    <h1>Change Log</h1>
-      <ol>
-        <li>
-          June 17th, 2019 at 19:10 (MDT)
-          <ol>
-            <li>Added pink text to index.html. Created pink variable to check manifest and partials are working.</li>
-          </ol>
-        </li>
-        <li>
-          Nov 5th, 2018 at 21:23 (MDT)
-          <ol>
-            <li>File first created: Nov 5th, 2018 at 21:23</li>
-          </ol>
-        </li>
-      </ol>
-    <p>Charlie Prator last edited this file on June 17th, 2019 at 19:10 (MDT).</p>
+
   </div><!-- /container -->
 </body>
 
