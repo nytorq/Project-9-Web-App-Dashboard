@@ -26,6 +26,9 @@ p {
   max-width: $max-width;
   margin: 0 auto;
   padding: 1.5em;
+  @include mq($break-t) {
+    padding: .5em 1em;
+  }
 }
 
 .centered {
@@ -34,5 +37,10 @@ p {
 
 
 body {
-  background-color: lighten($color-primary,20%);
+  background-color: $white;
+  top: 5em;
+  position: relative;
+  @include mq($break-t) {
+    padding-left: 5em;
+  }
 }

@@ -2,34 +2,70 @@
 // Navigation Styles
 // ==========================================================================
 
-.nav {
-  @include e(top) {
-    position: fixed;
-    top: 0px;
-    background-color: $color-primary;
-    width: 100%;
-    height: 5em;
-    color: $white;
-    z-index: 2;
-    box-shadow: 0 0 6px 3px rgba(darken($color-primary,50%),0.5)
-  }
-
-  @include e(left) {
-    display: none;
-    @include mq($break-t) {
-      display: flex;
-      justify-content: flex-end;
-      position: fixed;
-      left: 0;
-      background-color: darken($color-primary, 25%);
-      width: 5em;
-      height: 100%;
-      z-index: 1;
+.nav-top {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-primary;
+  width: 100%;
+  height: 5em;
+  color: $white;
+  z-index: 2;
+  box-shadow: 0 0 6px 3px rgba(darken($color-primary,50%),0.5);
+  @include e(item) {
+    @extend %nav-top;
+    @include m(mobile) {
+      @extend %nav-top;
     }
-
+    @include m(desktop) {
+      @extend %nav-top;
+      display: none;
+      @include mq($break-t) {
+        display: inherit;
+      }
+    }
   }
 }
 
-.nav__top ul {
+.nav-left {
+  display: none;
+  @include mq($break-t) {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    left: 0;
+    background-color: darken($color-primary, 10%);
+    width: 5em;
+    height: 100%;
+    z-index: 1;
+    padding-top: em(88px);
+    @include e(item) {
+      padding: 1em;
+      @include mq($break-t) {
+        @include m(active) {
+          padding: 1em;
+          border-left: 4px solid $color-accent;
+        }
+        @include m(inactive) {
+          padding: 1em;
+          fill: rgba($white, 0.25);
+        }
+      }
+    }
+  }
+}
+
+.nav-top ul {
   display: flex;
+  align-items: center;
+}
+
+
+.nav-left ul {
+  @include mq($break-t) {
+      margin: 0 auto;
+      width: 100%;
+  }
 }

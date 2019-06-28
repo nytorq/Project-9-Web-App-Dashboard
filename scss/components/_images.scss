@@ -11,3 +11,13 @@
 #bell {
   width: em(24px);
 }
+
+svg {
+  overflow: inherit;
+}
+
+#menu {
+  width: auto;
+  height: 32px;
+  fill: white;
+}

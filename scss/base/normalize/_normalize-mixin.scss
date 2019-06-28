@@ -397,9 +397,13 @@
      * Hide the overflow in IE.
      */
 
-    svg:not(:root) {
-      overflow: hidden;
-    }
+     /**
+      * Developer Note: Removing this declaration due to SVG hiding issue (see the #menu svg)
+      */
+
+    // svg:not(:root) {
+    //   overflow: hidden;
+    // }
   }
 
   @if _normalize-include(forms) {

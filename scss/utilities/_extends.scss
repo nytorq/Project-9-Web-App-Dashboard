@@ -13,3 +13,13 @@
 }
 
 // UI Element Specific Placeholders
+
+%nav-top {
+  line-height: 0;
+  padding: 0 0.5em;
+}
+
+%nav-left {
+  padding: 1em;
+}
+// couldn't use the above declaration cause it's used in a media query??
