@@ -1,0 +1,23 @@
+// ==========================================================================
+// Typographical Styles
+// ==========================================================================
+
+.icon {
+  @extend %icons;
+  @include m('primary') {
+    @extend %icons;
+    color: $color-primary;
+  }
+  @include m('white') {
+    @extend %icons;
+    color: $white;
+  }
+}
+
+
+.input-icon {
+  position: relative;
+  left: 85%;
+  bottom: 50%;
+  color: $color-primary;
+}
