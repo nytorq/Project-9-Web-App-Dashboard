@@ -1,0 +1,24 @@
+// ==========================================================================
+// CHART AND GRAPH STYLES
+// ==========================================================================
+
+
+.chart {
+  @include e(tab) {
+    display: flex;
+    justify-content: flex-end;
+  }
+  @include e(period) {
+    padding: 0 1em;
+    font-weight: $font-weight--bold;
+    color: darken($white, 50%);
+    &:last-child {
+      padding-right: 0;
+    }
+    &:nth-child(3) {
+      color: $white;
+      background-color: $color-accent;
+      border-radius: 1em;
+    }
+  }
+}

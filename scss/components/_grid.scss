@@ -19,7 +19,15 @@
 @include mq($break-t) {
   @for $i from 1 through 12 {
     .grid__col--#{$i} {
-      width: calc(768px*calc(#{$i}/12));
+      width: calc(#{$break-t}*calc(#{$i}/12));
+    }
+  }
+}
+
+@include mq($break-d) {
+  @for $i from 1 through 12 {
+    .grid__col--#{$i} {
+      width: calc(#{$break-d}*calc(#{$i}/12));
     }
   }
 }

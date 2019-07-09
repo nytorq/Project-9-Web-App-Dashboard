@@ -94,11 +94,22 @@
 <body>
   <div class="container">
     <div class="grid__row">
-      <div class="grid__col--3"><h1 class="tab">Dashboard</h1></div>
-      <span class="grid__col--6"></span>
-      <div class="grid__col--3"><input type="search" placeholder="Search"><i class="fas fa-search input-icon" aria-hidden="true"></i></div>
+      <div class="grid__col--4"><h1 class="tab">Dashboard</h1></div>
+      <span class="grid__col--2"></span>
+      <div class="grid__col--6"><div class="inputs"><input type="search" placeholder="Search"><i class="fas fa-search input-icon" aria-hidden="true"></i></div><!--/.search--></div><!--/.grid__col--6-->
     </div><!--/.grid__row-->
     <div class="grid__row"><div class="banner grid__col--12"><p class="banner__text">Alert! Your dashboard numbers have something wrong with them, and you need to correct it before something bad happens!</p><i class="fas fa-times icon--white"></i></div></div><!--.grid__row-->
+    <div class="grid__row">
+      <div class="grid__col--8"><h2>Traffic</h2></div><!--/.grid__col--8-->
+      <div class="grid__col--4">
+        <ul class="chart__tab">
+          <li class="chart__period">Hourly</li>
+          <li class="chart__period">Daily</li>
+          <li class="chart__period">Weekly</li>
+          <li class="chart__period">Monthly</li>
+        </ul>
+      </div><!--/.grid__col--4-->
+    </div><!--/.grid__row-->
   </div><!-- /container -->
 </body>
 

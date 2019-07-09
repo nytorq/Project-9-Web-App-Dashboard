@@ -34,3 +34,9 @@
     margin: 0.25em 1em;
   }
 }
+
+h2 {
+  color: lighten($color-primary, 10%);
+  font-weight: $font-weight--bold;
+  text-transform: uppercase;
+}

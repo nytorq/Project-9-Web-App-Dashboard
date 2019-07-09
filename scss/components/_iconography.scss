@@ -1,5 +1,5 @@
 // ==========================================================================
-// Typographical Styles
+// Iconographical Styles
 // ==========================================================================
 
 .icon {
@@ -16,8 +16,15 @@
 
 
 .input-icon {
-  position: relative;
-  left: 85%;
-  bottom: 50%;
-  color: $color-primary;
+  position: absolute;
+  right: 1em;
+  top: 1.25em;
+  color: lighten($color-primary,15%);
+  // transition: color 0.15s ease-in-out;
 }
+
+// .testinput:focus .input-icon {
+//   color: red;
+// }
+
+//Tried to get the magnifying glass icon to change upon <input>'s hover

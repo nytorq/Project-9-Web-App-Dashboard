@@ -5,6 +5,15 @@
 
 // INPUTS
 
+.inputs {
+  position: relative;
+}
+
 input {
   @extend %inputs;
+  &:focus {
+    border: 1px solid $color-primary;
+    box-shadow: 0px 0px 11px 2px rgba(darken($color-primary,0.33), 0.10);
+    outline: none;
+  }
 }
