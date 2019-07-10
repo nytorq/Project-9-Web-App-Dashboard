@@ -1,5 +1,5 @@
 // ==========================================================================
-// CHART AND GRAPH STYLES
+// CHARTS, CARDS, AND GRAPH STYLES
 // ==========================================================================
 
 
@@ -20,5 +20,32 @@
       background-color: $color-accent;
       border-radius: 1em;
     }
+  }
+}
+
+.card {
+  border-radius: 0.33em;
+  border: solid 1px lighten($gray, 25%);
+  background-color: lighten($gray, 48%);
+  padding: 1em;
+  display: flex;
+  @include e(icon-box) {
+    border-radius: 100%;
+    background-color: $color-primary;
+    padding: 1em;
+    display: inline-block;
+  }
+  @include e(icon) {
+    color: $white;
+    font-size: 1.25em;
+  }
+  @include e(title) {
+    color: $color-primary;
+    font-weight: $font-weight--bold;
+    font-size: 1.25em;
+  }
+  @include e(value) {
+    font-size: 3em;
+    font-weight: $font-weight--thin;
   }
 }
