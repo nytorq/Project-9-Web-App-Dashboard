@@ -4836,51 +4836,51 @@ body {
 @media (min-width: 768px) {
   .grid__col--1 {
     width: calc(768px*calc(1/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--2 {
     width: calc(768px*calc(2/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--3 {
     width: calc(768px*calc(3/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--4 {
     width: calc(768px*calc(4/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--5 {
     width: calc(768px*calc(5/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--6 {
     width: calc(768px*calc(6/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--7 {
     width: calc(768px*calc(7/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--8 {
     width: calc(768px*calc(8/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--9 {
     width: calc(768px*calc(9/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--10 {
     width: calc(768px*calc(10/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--11 {
     width: calc(768px*calc(11/12));
-    margin: 0 1em; }
+    margin: 0 0.5em; }
 
   .grid__col--12 {
     width: calc(768px*calc(12/12));
-    margin: 0 1em; } }
+    margin: 0 0.5em; } }
 @media (min-width: 1024px) {
   .grid__col--1 {
     width: calc(1024px*calc(1/12)); }
@@ -4998,6 +4998,13 @@ h2 {
   font-weight: 700;
   text-transform: uppercase; }
 
+a {
+  color: #7477bf;
+  text-decoration: none;
+  transition: text-decoration .25s ease-in-out; }
+  a:hover {
+    text-decoration: underline; }
+
 .icon--primary {
   color: #7477bf; }
 .icon--white {
@@ -5032,13 +5039,17 @@ svg {
   height: 32px;
   fill: white; }
 
-.chart__tab {
-  display: flex;
-  justify-content: flex-end; }
+@media (min-width: 768px) {
+  .chart__tab {
+    display: flex;
+    justify-content: flex-end; } }
 .chart__period {
-  padding: 0 1em;
+  padding: 0.25em 0;
   font-weight: 700;
   color: gray; }
+  @media (min-width: 768px) {
+    .chart__period {
+      padding: 0 1em; } }
   .chart__period:last-child {
     padding-right: 0; }
   .chart__period:nth-child(3) {
@@ -5051,21 +5062,77 @@ svg {
   border: solid 1px #c3c3c3;
   background-color: #fdfdfd;
   padding: 1em;
+  margin: 1em 0;
   display: flex; }
+  @media (min-width: 768px) {
+    .card {
+      margin: 0; } }
   .card__icon-box {
     border-radius: 100%;
     background-color: #7477bf;
-    padding: 1em;
-    display: inline-block; }
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    margin: auto 0; }
+    @media (min-width: 1024px) {
+      .card__icon-box {
+        width: 4em;
+        height: 4em; } }
   .card__icon {
     color: #fff;
-    font-size: 1.25em; }
+    font-size: 1.6em;
+    position: relative;
+    left: 0.5em;
+    top: 0.5em; }
+    @media (min-width: 1024px) {
+      .card__icon {
+        font-size: 2em; } }
   .card__title {
     color: #7477bf;
     font-weight: 700;
-    font-size: 1.25em; }
+    font-size: 1em;
+    margin: 0; }
+    @media (min-width: 1024px) {
+      .card__title {
+        margin: .25em;
+        font-size: 1.25em; } }
+  .card__value-box {
+    display: inline-block;
+    margin-left: 1em; }
   .card__value {
-    font-size: 3em;
-    font-weight: 100; }
+    font-weight: 100;
+    font-size: 1.5em;
+    font-weight: 100;
+    margin: .25em 0; }
+    @media (min-width: 1024px) {
+      .card__value {
+        font-size: 3em; } }
+
+.newMembers {
+  padding: 0.5em;
+  border: 1px solid #b6b6b6; }
+  .newMembers__row {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0;
+    border-bottom: 1px solid gainsboro; }
+    .newMembers__row:last-child {
+      border-bottom: none; }
+  .newMembers__pic {
+    margin: 0.5em; }
+  .newMembers__infoBox p {
+    margin: 0; }
+    @media (min-width: 1024px) {
+      .newMembers__infoBox p {
+        align-self: center;
+        flex: 1; } }
+  @media (min-width: 1024px) {
+    .newMembers__infoBox {
+      display: flex;
+      flex-direction: row;
+      width: 100%; } }
+  @media (min-width: 1024px) {
+    .newMembers__info {
+      flex: 4; } }
 
 /*# sourceMappingURL=application.css.map */

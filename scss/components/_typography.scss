@@ -40,3 +40,12 @@ h2 {
   font-weight: $font-weight--bold;
   text-transform: uppercase;
 }
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: text-decoration .25s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
+}

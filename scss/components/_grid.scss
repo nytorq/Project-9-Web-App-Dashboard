@@ -20,7 +20,7 @@
   @for $i from 1 through 12 {
     .grid__col--#{$i} {
       width: calc(#{$break-t}*calc(#{$i}/12));
-      margin: 0 1em;
+      margin: 0 0.5em;
     }
   }
 }
