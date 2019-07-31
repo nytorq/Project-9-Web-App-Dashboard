@@ -119,16 +119,52 @@
       flex: 4;
     }
   }
-  // @include e(info) {
-  //   margin-left: 0.75em;
-  //   & p:first-child {
-  //     font-weight: 600;
-  //   }
-  //   & p:last-child {
-  //     margin: 0;
-  //   }
-  //   & p:nth-child(odd) {
-  //     margin: 0;
-  //   }
-  // }
+}
+
+.newMembers {
+  padding: 0.5em;
+  border: 1px solid lighten($gray, 20%);
+  @include e(row) {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0;
+    border-bottom: 1px solid lighten($gray, 35%);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  @include e(pic) {
+    margin: 0.5em;
+  }
+  @include e(infoBox) {
+    & p {
+      margin: 0;
+      @include mq($break-d) {
+        align-self: center;
+        flex: 1;
+      }
+    }
+    @include mq ($break-d) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+  @include e(messageBox) {
+    display: flex;
+    align-items: center;
+  }
+  @include e(info) {
+    @include mq($break-d) {
+      flex: 4;
+    }
+  }
+  @include e(message) {
+    & p {
+      margin: 0;
+    }
+    & p:last-child {
+      font-weight: $font-weight--bold;
+    }
+  }
 }
