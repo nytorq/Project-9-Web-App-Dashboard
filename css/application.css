@@ -13,7 +13,8 @@
   padding: 0 0.5em;
 }
 
-input {
+input,
+textarea {
   border: 1px solid #cbcce7;
   padding: 1em;
   border-radius: 4px;
@@ -23,6 +24,12 @@ input {
 
 .icon--white, .icon--primary, .icon {
   padding: 0.5em;
+}
+
+.button--secondary, .button--primary, .button {
+  border-radius: 4px;
+  width: 100%;
+  padding: 1em 0;
 }
 
 /*!
@@ -6564,10 +6571,20 @@ a:hover {
   position: relative;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border: 1px solid #7477bf;
   box-shadow: 0px 0px 11px 2px rgba(115, 118, 190, 0.1);
   outline: none;
+}
+
+.button--primary {
+  background-color: #7477bf;
+  color: #fff;
+}
+.button--secondary {
+  background-color: #848484;
+  color: #fff;
 }
 
 .picture__profile {
@@ -6718,46 +6735,13 @@ svg {
     flex: 4;
   }
 }
-
-.newMembers {
-  padding: 0.5em;
-  border: 1px solid #b6b6b6;
-}
-.newMembers__row {
-  display: flex;
-  align-items: center;
-  padding: 0.5em 0;
-  border-bottom: 1px solid gainsboro;
-}
-.newMembers__row:last-child {
-  border-bottom: none;
-}
-.newMembers__pic {
-  margin: 0.5em;
-}
-.newMembers__infoBox p {
-  margin: 0;
-}
-@media (min-width: 1024px) {
-  .newMembers__infoBox p {
-    align-self: center;
-    flex: 1;
-  }
-}
-@media (min-width: 1024px) {
-  .newMembers__infoBox {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-}
 .newMembers__messageBox {
   display: flex;
   align-items: center;
 }
 @media (min-width: 1024px) {
-  .newMembers__info {
-    flex: 4;
+  .newMembers__messageBox {
+    width: 100%;
   }
 }
 .newMembers__message p {
@@ -6765,6 +6749,11 @@ svg {
 }
 .newMembers__message p:last-child {
   font-weight: 700;
+}
+@media (min-width: 1024px) {
+  .newMembers__message {
+    flex: 4;
+  }
 }
 
 /*# sourceMappingURL=application.css.map */

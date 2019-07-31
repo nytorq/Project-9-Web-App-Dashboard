@@ -119,44 +119,11 @@
       flex: 4;
     }
   }
-}
-
-.newMembers {
-  padding: 0.5em;
-  border: 1px solid lighten($gray, 20%);
-  @include e(row) {
-    display: flex;
-    align-items: center;
-    padding: 0.5em 0;
-    border-bottom: 1px solid lighten($gray, 35%);
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-  @include e(pic) {
-    margin: 0.5em;
-  }
-  @include e(infoBox) {
-    & p {
-      margin: 0;
-      @include mq($break-d) {
-        align-self: center;
-        flex: 1;
-      }
-    }
-    @include mq ($break-d) {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-    }
-  }
   @include e(messageBox) {
     display: flex;
     align-items: center;
-  }
-  @include e(info) {
     @include mq($break-d) {
-      flex: 4;
+      width: 100%;
     }
   }
   @include e(message) {
@@ -165,6 +132,9 @@
     }
     & p:last-child {
       font-weight: $font-weight--bold;
+    }
+    @include mq($break-d) {
+      flex: 4;
     }
   }
 }
