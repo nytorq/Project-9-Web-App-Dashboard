@@ -13,8 +13,10 @@
   padding: 0 0.5em;
 }
 
-input,
+input[type=text],
+input[type=search],
 textarea {
+  box-sizing: border-box;
   border: 1px solid #cbcce7;
   padding: 1em;
   border-radius: 4px;
@@ -30,6 +32,7 @@ textarea {
   border-radius: 4px;
   width: 100%;
   padding: 1em 0;
+  transition: background-color 0.05s ease-in-out;
 }
 
 /*!
@@ -6567,14 +6570,30 @@ a:hover {
   color: #a8aad7;
 }
 
+form > * {
+  margin: 0.5em 0;
+}
+
+.message-user__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.message-user button:first-child {
+  margin-right: 0.5em;
+}
+.message-user button:last-child {
+  margin-left: 0.5em;
+}
+
 .inputs {
   position: relative;
 }
 
-input:focus,
+input[type=text]:focus,
+input[type=search]:focus,
 textarea:focus {
   border: 1px solid #7477bf;
-  box-shadow: 0px 0px 11px 2px rgba(115, 118, 190, 0.1);
+  box-shadow: 0px 0px 11px 2px rgba(44, 46, 95, 0.1);
   outline: none;
 }
 
@@ -6582,9 +6601,21 @@ textarea:focus {
   background-color: #7477bf;
   color: #fff;
 }
+.button--primary:hover {
+  background-color: #8588c7;
+}
+.button--primary:active {
+  background-color: #5155af;
+}
 .button--secondary {
-  background-color: #848484;
+  background-color: #B2B2B2;
   color: #fff;
+}
+.button--secondary:hover {
+  background-color: #bfbfbf;
+}
+.button--secondary:active {
+  background-color: #999999;
 }
 
 .picture__profile {

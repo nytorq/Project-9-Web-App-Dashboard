@@ -275,8 +275,8 @@
       </div><!--/.grid__col--6-->
     </div><!--/.grid__row-->
     <div class="grid__row">
-      <h2>Message User</h2>
       <div class="grid__col--6">
+        <h2>Message User</h2>
         <form>
           <div class="inputs">
             <input type="search" placeholder="Search for users">
@@ -284,11 +284,28 @@
           </div><!--/.inputs-->
           <textarea placeholder="Message for user"></textarea>
           <button type="submit" class="button--primary">Send</button>
-          <button type="submit" class="button--secondary">Cancel</button>
         </form>
       </div><!--/.grid__col--6-->
       <div class="grid__col--6">
         <h2>Settings</h2>
+        <form class="message-user">
+          <div class="message-user__field">
+            <label>Send Email Notifications</label>
+            <input type="checkbox">
+          </div><!--/.message-user__field-->
+          <div class="message-user__field">
+            <label>Set Profile to Public</label>
+            <input type="checkbox">
+          </div><!--/.message-user__field-->
+          <div class="inputs">
+            <input type="text" placeholder="Select time zone">
+            <i class="fas fa-chevron-down input-icon" aria-hidden="true"></i>
+          </div><!--/.inputs-->
+          <div class="message-user__buttons">
+            <button type="submit" class="button--primary">Save</button>
+            <button type="button" class="button--secondary">Cancel</button>
+          </div>
+        </form>
       </div><!--/.grid__col--6-->
     </div><!--/.grid__row-->
   </div><!-- /container -->

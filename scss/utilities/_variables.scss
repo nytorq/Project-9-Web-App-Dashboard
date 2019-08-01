@@ -21,25 +21,15 @@ $max-width                             : 1024px;
 // Descriptive Base Colors
 $white                                 : #fff;
 $gray                                  : #838383;
-//
-// $pink                                  : #ff607c;
-// $seafoam-blue                          : #51ddfc;
-// $algae-green                           : #58e1c1;
-// $alpine-green                          : #63cc82;
-// $salmon                                : #e4757a;
-// $tangerine                             : #fd7856;
-$bluebonnet                               : #7477bf;
-$lime-green                               : #81c98f;
-// $slate-blue                            : #16465b;
+
+$light-gray                            : #B2B2B2;
+$bluebonnet                            : #7477bf;
+$lime-green                            : #81c98f;
 
 // Color Usage
-$color-primary                            : $bluebonnet;
-// $color-secondary                       : $algae-green;
-$color-accent                             : $lime-green;
-// $color-success                         : $alpine-green;
-// $color-negative                        : $salmon;
-// $color-warning                         : $tangerine;
-// $color-info                            : $lilac;
+$color-primary                         : $bluebonnet;
+$color-secondary                       : $light-gray;
+$color-accent                          : $lime-green;
 
 // Text
 $base__font-size                       : 16px;
