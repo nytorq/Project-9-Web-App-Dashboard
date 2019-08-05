@@ -18,6 +18,11 @@
     @extend %nav-top;
     @include m(mobile) {
       @extend %nav-top;
+      & svg:first-child {
+        position: relative;
+        top: 4px;
+        left: 6px;
+      }
     }
     @include m(desktop) {
       @extend %nav-top;
@@ -25,6 +30,18 @@
       @include mq($break-t) {
         display: inherit;
       }
+    }
+  }
+  & ul:first-child li:first-child {
+    @include mq($break-t) {
+      display: none;
+    }
+  }
+  & ul:last-child {
+    width: 100%;
+    justify-content: flex-end;
+    & li:first-child {
+      border-right: 1px solid darken($color-primary, 10%);
     }
   }
 }
@@ -68,4 +85,14 @@
       margin: 0 auto;
       width: 100%;
   }
+}
+
+.bubble {
+  background-color: lighten($color-accent, 10%);
+  width: 8px;
+  height: 8px;
+  position: relative;
+  top: -6px;
+  right: 7px;
+  border-radius: 100%;
 }

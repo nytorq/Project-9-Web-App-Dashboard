@@ -69,3 +69,30 @@ textarea {
     }
   }
 }
+
+// TOGGLE
+
+.track {
+  height: 40px;
+  width: 106px;
+  background-color: #7477bf;
+  border-radius: 40px;
+  position: relative;
+  border: 2px solid #bfbebe;
+  & p {
+    color: $white;
+  }
+}
+
+.switch {
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  z-index: 100;
+  display: block;
+  border-radius: 100%;
+  border: 2px solid #bfbebe;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}

@@ -6459,6 +6459,11 @@ body {
   z-index: 2;
   box-shadow: 0 0 6px 3px rgba(16, 17, 36, 0.5);
 }
+.nav-top__item--mobile svg:first-child {
+  position: relative;
+  top: 4px;
+  left: 6px;
+}
 .nav-top__item--desktop {
   display: none;
 }
@@ -6466,6 +6471,18 @@ body {
   .nav-top__item--desktop {
     display: inherit;
   }
+}
+@media (min-width: 768px) {
+  .nav-top ul:first-child li:first-child {
+    display: none;
+  }
+}
+.nav-top ul:last-child {
+  width: 100%;
+  justify-content: flex-end;
+}
+.nav-top ul:last-child li:first-child {
+  border-right: 1px solid #5155af;
 }
 
 .nav-left {
@@ -6490,7 +6507,7 @@ body {
 @media (min-width: 768px) and (min-width: 768px) {
   .nav-left__item--active {
     padding: 1em;
-    border-left: 4px solid #81c98f;
+    border-left: 4px solid #91C794;
   }
   .nav-left__item--inactive {
     padding: 1em;
@@ -6508,6 +6525,16 @@ body {
     margin: 0 auto;
     width: 100%;
   }
+}
+
+.bubble {
+  background-color: #b3d8b5;
+  width: 8px;
+  height: 8px;
+  position: relative;
+  top: -6px;
+  right: 7px;
+  border-radius: 100%;
 }
 
 .appLogo {
@@ -6624,6 +6651,31 @@ textarea:hover {
   background-color: #999999;
 }
 
+.track {
+  height: 40px;
+  width: 106px;
+  background-color: #7477bf;
+  border-radius: 40px;
+  position: relative;
+  border: 2px solid #bfbebe;
+}
+.track p {
+  color: #fff;
+}
+
+.switch {
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  z-index: 100;
+  display: block;
+  border-radius: 100%;
+  border: 2px solid #bfbebe;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
 .picture__profile {
   border-radius: 100%;
   width: 3em;
@@ -6664,7 +6716,7 @@ svg {
 }
 .chart__period:nth-child(3) {
   color: #fff;
-  background-color: #81c98f;
+  background-color: #91C794;
   border-radius: 1em;
 }
 
