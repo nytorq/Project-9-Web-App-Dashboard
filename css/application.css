@@ -30,6 +30,7 @@ textarea {
 }
 
 .button--secondary, .button--primary, .button {
+  border: none;
   border-radius: 4px;
   width: 100%;
   padding: 1em 0;
@@ -6498,7 +6499,7 @@ body {
     width: 5em;
     height: 100%;
     z-index: 1;
-    padding-top: 5.5em;
+    padding-top: 1.5em;
   }
   .nav-left__item {
     padding: 1em;
@@ -6518,6 +6519,7 @@ body {
 .nav-top ul {
   display: flex;
   align-items: center;
+  padding: 0 1em;
 }
 
 @media (min-width: 768px) {
@@ -6602,6 +6604,14 @@ form > * {
   margin: 0.5em 0;
 }
 
+.message-user__field input[type=checkbox] {
+  visibility: hidden;
+}
+@media (min-width: 1024px) {
+  .message-user__field label {
+    padding-right: 1em;
+  }
+}
 .message-user__buttons {
   display: flex;
   justify-content: space-between;
@@ -6652,15 +6662,24 @@ textarea:hover {
 }
 
 .track {
-  height: 40px;
-  width: 106px;
+  height: 2.5em;
+  width: 6em;
   background-color: #7477bf;
   border-radius: 40px;
   position: relative;
   border: 2px solid #bfbebe;
+  display: inline-flex;
+  align-items: center;
+  margin: 0.5em 0;
+}
+@media (min-width: 1024px) {
+  .track {
+    left: -1.1875em;
+  }
 }
 .track p {
   color: #fff;
+  margin: 1em;
 }
 
 .switch {

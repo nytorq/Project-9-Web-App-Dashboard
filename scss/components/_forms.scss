@@ -10,7 +10,14 @@ form > * {
 
 .message-user {
   @include e(field) {
-
+    & input[type="checkbox"] {
+      visibility: hidden;
+    }
+    @include mq($break-d) {
+      & label {
+        padding-right: 1em;
+      }
+    }
   }
   @include e(buttons) {
     display: flex;
@@ -73,14 +80,21 @@ textarea {
 // TOGGLE
 
 .track {
-  height: 40px;
-  width: 106px;
+  height: em(40px);
+  width: em(96px);
   background-color: #7477bf;
   border-radius: 40px;
   position: relative;
   border: 2px solid #bfbebe;
+  display: inline-flex;
+  align-items: center;
+  margin: 0.5em 0;
+  @include mq($break-d) {
+    left: em(-19px);
+  }
   & p {
     color: $white;
+    margin: 1em;
   }
 }
 

@@ -5,6 +5,12 @@
   <title>Unit 9 - Web App Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/application.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
 </head>
 <!--SVG bell icon-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:none;">
@@ -116,7 +122,38 @@
       </div><!--/.grid__col--4-->
     </div><!--/.grid__row-->
     <div class="grid__row">
-      <div class="grid__col--12"><p style="height: 20vh; background-color: #b9b9b9; color: white; text-align: center; position: relative;">Traffic Chart Placeholder</p></div><!--/.grid__col--6-->
+      <div class="grid__col--12">
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(116, 119, 191, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgb(116, 119, 191)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+      </div><!--/.grid__col--6-->
     </div><!--/.grid__row-->
     <div class="grid__row">
       <div class="grid__col--6">
@@ -300,11 +337,15 @@
             <div class="track">
               <p>On</p>
               <div class="switch"></div>
-            </div>
+            </div><!--/.track (or toggle, switch)-->
           </div><!--/.message-user__field-->
           <div class="message-user__field">
             <label>Set Profile to Public</label>
             <input type="checkbox">
+            <div class="track">
+              <p>On</p>
+              <div class="switch"></div>
+            </div><!--/.track (or toggle, switch)-->
           </div><!--/.message-user__field-->
           <div class="inputs">
             <input type="text" placeholder="Select time zone">
