@@ -110,3 +110,14 @@ textarea {
   bottom: 2px;
   right: 2px;
 }
+
+
+// FORM Message
+
+.successMessage {
+  display: none;
+  padding: 1em;
+  background-color: $teal;
+  color: $white;
+  border-radius: 0.25em;
+}
