@@ -381,8 +381,8 @@
             <i class="fas fa-search input-icon" aria-hidden="true"></i>
           </div><!--/.inputs-->
           <textarea placeholder="Message for user"></textarea>
-          <button type="submit" class="button--primary">Send</button>
-          <span><p class="successMessage">Thanks for the message. We'll get back to you as soon as possible.</p></span>
+          <button type="submit" class="button--primary" onclick="return false">Send</button>
+          <p class="successMessage">Thanks for the message. We'll get back to you as soon as possible.</p>
         </form>
       </div><!--/.grid__col--6-->
       <div class="grid__col--6">
@@ -409,9 +409,10 @@
             <i class="fas fa-chevron-down input-icon" aria-hidden="true"></i>
           </div><!--/.inputs-->
           <div class="message-user__buttons">
-            <button type="submit" class="button--primary">Save</button>
+            <button type="submit" class="button--primary" onclick="return false">Save</button>
             <button type="button" class="button--secondary">Cancel</button>
           </div>
+          <p class="successMessage">Settings Saved.</p>
         </form>
       </div><!--/.grid__col--6-->
     </div><!--/.grid__row-->

@@ -44,4 +44,7 @@
   width: 100%;
   padding: 1em 0;
   transition: background-color 0.05s ease-in-out;
+  &:focus {
+    outline: none;
+  }
 }
