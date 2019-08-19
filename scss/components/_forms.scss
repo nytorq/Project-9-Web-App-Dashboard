@@ -116,8 +116,10 @@ textarea {
 
 .successMessage {
   display: none;
+  opacity: 0;
   padding: 1em;
   background-color: $teal;
   color: $white;
   border-radius: 0.25em;
+  transition: opacity 0.5s ease-in-out;
 }
