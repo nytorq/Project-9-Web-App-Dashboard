@@ -6,6 +6,7 @@
 
 form > * {
   margin: 0.5em 0;
+  z-index: 0;
 }
 
 .message-user {
@@ -37,6 +38,30 @@ form > * {
   position: relative;
 }
 
+.dropdown {
+  display: none;
+  background-color: $white;
+  z-index: 2;
+  box-shadow: 0px 0px 11px 2px rgba(darken($color-primary,33%), 0.10);
+  border-radius: 0.25em;
+  position: absolute;
+  width: 100%;
+  & p:first-child {
+    padding-top: 1em;
+  }
+  & p:last-child {
+    padding-bottom: 1em;
+  }
+  @include e(value) {
+    margin: 0;
+    padding: 1em;
+    transition: background-color 0.033s ease-in-out;
+    &:hover {
+      background-color: rgba($color-primary, 0.25);
+    }
+  }
+}
+
 input[type="text"],
 input[type="search"],
 textarea {
@@ -45,6 +70,9 @@ textarea {
     border: 1px solid $color-primary;
     box-shadow: 0px 0px 11px 2px rgba(darken($color-primary,33%), 0.10);
     outline: none;
+  }
+  &:focus ~ .dropdown {
+    display: inherit;
   }
   &:hover {
     background-color: $white;

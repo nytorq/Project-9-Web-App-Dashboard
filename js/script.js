@@ -11,13 +11,27 @@ const members = [
     "joinDate"  : "10/15/15"
   },
   {
-    "userID": 21,
+    "userID": 1,
     "firstName" : "Dale",
     "lastName"  : "Byrd",
     "email"     : "dbyrd@gmail.com",
     "joinDate"  : "10/15/15"
+  },
+  {
+    "userID": 2,
+    "firstName" : "Dawn",
+    "lastName"  : "Wood",
+    "email"     : "dwood@hotmail.com",
+    "joinDate"  : "10/15/15"
+  },
+  {
+    "userID": 3,
+    "firstName" : "Dan",
+    "lastName"  : "Oliver",
+    "email"     : "doliver@gmail.com",
+    "joinDate"  : "10/15/15"
   }
-]
+];
 
 // FUNCTIONS
 
