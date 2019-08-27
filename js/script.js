@@ -30,6 +30,13 @@ const members = [
     "lastName"  : "Oliver",
     "email"     : "doliver@gmail.com",
     "joinDate"  : "10/15/15"
+  },
+  {
+    "userID": 4,
+    "firstName" : "Charlie",
+    "lastName"  : "Prator",
+    "email"     : "cprator@gmail.com",
+    "joinDate"  : "12/09/13"
   }
 ];
 
@@ -75,9 +82,54 @@ function submit_message() {
   }
 }
 
+function compare(a, b) {
+  const lastNameA = a.lastName.toUpperCase();
+  const lastNameB = b.lastName.toUpperCase();
+  let comparison = 0;
+  if (lastNameA > lastNameB) {
+    comparison = 1;
+  } else if (lastNameA < lastNameB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
+// console.log(members.sort(compare));
+
+function sortMembers() {
+  let sortedMembers = [...members].sort(compare);
+  // console.log(sortedMembers);
+  let dropdownValues = document.getElementsByClassName('dropdown__value');
+  console.log(dropdownValues);
+  for (i=0; i < 4; i++) {
+    let memberName = sortedMembers[i].firstName.concat(' ',sortedMembers[i].lastName)
+    dropdownValues[i].innerText = memberName;
+    // console.log(memberName)
+  }
+}
+
 // FUNCTION DECLARATIONS
 
 close_element();
 submit_message();
+sortMembers();
 
 // EVENT HANDLERS
+
+const search_inputs = document.querySelectorAll("input[type='search']");
+
+for (i=0; i < search_inputs.length; i++) {
+  let currentInput = search_inputs[i];
+  currentInput.addEventListener('keydown', () => {
+    let inputValue = currentInput.value;
+    // console.log(inputValue);
+  })
+}
+
+
+
+
+
+
+
+// Filtering the values in the dropdown based upon the user's input
