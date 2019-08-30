@@ -5,6 +5,7 @@
   <title>Unit 9 - Web App Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/application.css">
+  <link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA=" crossorigin="anonymous" />
@@ -377,7 +378,7 @@
         <h2>Message User</h2>
         <form>
           <div class="inputs">
-            <input type="search" placeholder="Search for users">
+            <input type="search" id="messageForUser" placeholder="Search for users">
             <i class="fas fa-search input-icon" aria-hidden="true"></i>
             <div class="dropdown">
               <p class="dropdown__value">Value 1</p>
@@ -424,5 +425,6 @@
     </div><!--/.grid__row-->
   </div><!-- /container -->
 <script type="text/javascript" src="js/script.js"></script>
+<script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
 </body>
 </html>

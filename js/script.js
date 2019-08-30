@@ -39,6 +39,23 @@ const members = [
     "joinDate"  : "12/09/13"
   }
 ];
+var autocomplete = require('autocompleter');
+const input = document.getElementById("messageForUser");
+
+function autocomplete({
+    input: input,
+    fetch: function(text, update) {
+        text = text.toLowerCase();
+        // you can also use AJAX requests instead of preloaded data
+        var suggestions = members.filter(n => n.label.toLowerCase().startsWith(text))
+        update(suggestions);
+    },
+    onSelect: function(item) {
+        input.value = item.label;
+    }
+});
+
+
 
 // FUNCTIONS
 
@@ -122,7 +139,7 @@ for (i=0; i < search_inputs.length; i++) {
   let currentInput = search_inputs[i];
   currentInput.addEventListener('keydown', () => {
     let inputValue = currentInput.value;
-    // console.log(inputValue);
+    console.log(inputValue);
   })
 }
 
