@@ -39,21 +39,48 @@ const members = [
     "joinDate"  : "12/09/13"
   }
 ];
-var autocomplete = require('autocompleter');
-const input = document.getElementById("messageForUser");
-
-function autocomplete({
-    input: input,
-    fetch: function(text, update) {
-        text = text.toLowerCase();
-        // you can also use AJAX requests instead of preloaded data
-        var suggestions = members.filter(n => n.label.toLowerCase().startsWith(text))
-        update(suggestions);
-    },
-    onSelect: function(item) {
-        input.value = item.label;
-    }
-});
+const trafficData = [
+  {
+    "dataset" : 'hourly',
+    "labels"  : ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00','24:00'],
+    "array"   : [0, 750, 1250, 900, 485, 760, 1500, 293, 683]
+  },
+  {
+    "dataset" : 'daily',
+    "labels"  : ['Jan 26', 'Jan 26','Jan 27','Jan 28','Jan 29','Jan 30','Jan 31'],
+    "array"   : [1000, 893, 235, 1000, 1500, 3825, 1500]
+  },
+  {
+    "dataset" : 'weekly',
+    "labels"  : ['Jan 1', 'Jan 6', 'Jan 11', 'Jan 16', 'Jan 21', 'Jan 26', 'Jan 31'],
+    "array"   : [2953, 750, 999, 342, 1500, 2000, 362]
+  },
+  {
+    "dataset" : 'monthly',
+    "labels"  : ['Aug 2018', 'Sep 2018', 'Oct 2019', 'Nov 2018', 'Dec 2018', 'Jan 2019'],
+    "array"   : [1999, 5230, 1250, 2385, 900, 1859]
+  },
+]
+const chartPeriodContainer = document.getElementsByClassName('chart__tab');
+const unSelected = 'chart__period';
+const selected = unSelected.concat('--selected');
+chartPeriodContainer[0].childNodes[2].className = selected;
+//
+// var autocomplete = require('autocompleter');
+// const input = document.getElementById("messageForUser");
+//
+// function autocomplete({
+//     input: input,
+//     fetch: function(text, update) {
+//         text = text.toLowerCase();
+//         // you can also use AJAX requests instead of preloaded data
+//         var suggestions = members.filter(n => n.label.toLowerCase().startsWith(text))
+//         update(suggestions);
+//     },
+//     onSelect: function(item) {
+//         input.value = item.label;
+//     }
+// });
 
 
 
@@ -64,10 +91,25 @@ function removeParent(element) {
   parent.remove();
 }
 
-function displayMessage(e) {
-  let parent = returnForm(e)
-  parent.lastElementChild.setAttribute("style", "display: inherit;")
-  window.setTimeout(function() {parent.lastElementChild.style.opacity = 1;}, 200);
+function displayMessage(target) {
+  // console.log("Hey, I know what button is. See: " + e);
+  let parent = returnForm(target)
+  let errorMessage = parent.lastElementChild;
+  let successMessage = parent.lastElementChild.previousElementSibling;
+  const array = [];
+  for (i=0; i < target.form.length - 1; i++) {
+    let boolean =  target.form[i].value === "";
+    array.push(boolean);
+  }
+  if (array.includes(true)) {
+    // any one of the form elements has been found to be empty
+    errorMessage.setAttribute("style", "display: inherit;")
+    window.setTimeout(function() {errorMessage.style.opacity = 1;}, 200);
+  } else {
+    successMessage.setAttribute("style", "display: inherit;")
+    window.setTimeout(function() {successMessage.style.opacity = 1;}, 200);
+  }
+
   // parent.lastElementChild.style.display = 'inherit';
   // parent.lastElementChild.style.transition = 'display 3s ease-in-out';
 }
@@ -117,7 +159,7 @@ function sortMembers() {
   let sortedMembers = [...members].sort(compare);
   // console.log(sortedMembers);
   let dropdownValues = document.getElementsByClassName('dropdown__value');
-  console.log(dropdownValues);
+  // console.log(dropdownValues);
   for (i=0; i < 4; i++) {
     let memberName = sortedMembers[i].firstName.concat(' ',sortedMembers[i].lastName)
     dropdownValues[i].innerText = memberName;
@@ -140,6 +182,38 @@ for (i=0; i < search_inputs.length; i++) {
   currentInput.addEventListener('keydown', () => {
     let inputValue = currentInput.value;
     console.log(inputValue);
+  })
+}
+
+function changeSelected(target)  {
+  for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
+    chartPeriodContainer[0].childNodes[i].className = unSelected;
+  }
+  let selectedPeriod = target.textContent.toLowerCase();
+  let labels = [];
+  let data = [];
+  for (i=0 ; i < trafficData.length ; i++) {
+    if (trafficData[i]['dataset'].includes(selectedPeriod)) {
+      labels = trafficData[i]['labels'];
+      data = trafficData[i]['array'];
+      // console.log(labels);
+      // console.log(trafficChart.data.datasets[0].label)
+      // console.log(data);
+      trafficChart.data.datasets[0].data = data;
+      trafficChart.data.labels = labels;
+      trafficChart.update()
+      target.className = selected;
+      return;
+    };
+  }
+}
+
+
+for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
+  let currentChartPeriod = chartPeriodContainer[0].childNodes[i];
+  currentChartPeriod.addEventListener('click', () => {
+    // console.log('A chartPeriod has been clicked.');
+    changeSelected(currentChartPeriod);
   })
 }
 

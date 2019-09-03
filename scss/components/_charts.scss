@@ -11,19 +11,19 @@
     }
   }
   @include e(period) {
-    padding: 0.25em 0;
-    font-weight: $font-weight--bold;
-    color: darken($white, 50%);
+    @extend %chartPeriods;
     @include mq($break-t) {
       padding: 0 1em;
     }
     &:last-child {
       padding-right: 0;
     }
-    &:nth-child(3) {
+    @include m(selected) {
+      @extend %chartPeriods;
       color: $white;
       background-color: $color-accent;
       border-radius: 1em;
+      padding: 0 1em;
     }
   }
 }

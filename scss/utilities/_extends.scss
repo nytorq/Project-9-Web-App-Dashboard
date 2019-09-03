@@ -48,3 +48,8 @@
     outline: none;
   }
 }
+
+%chartPeriods {
+  font-weight: $font-weight--bold;
+  color: darken($white, 50%);
+}

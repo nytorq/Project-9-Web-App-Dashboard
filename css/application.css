@@ -40,6 +40,11 @@ textarea {
   outline: none;
 }
 
+.chart__period--selected, .chart__period {
+  font-weight: 700;
+  color: gray;
+}
+
 /*!
  * Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -6738,6 +6743,16 @@ textarea:hover {
   transition: opacity 0.5s ease-in-out;
 }
 
+.errorMessage {
+  display: none;
+  opacity: 0;
+  padding: 1em;
+  background-color: #f38484;
+  color: #fff;
+  border-radius: 0.25em;
+  transition: opacity 0.5s ease-in-out;
+}
+
 .picture__profile {
   border-radius: 100%;
   width: 3em;
@@ -6763,11 +6778,6 @@ svg {
     justify-content: flex-end;
   }
 }
-.chart__period {
-  padding: 0.25em 0;
-  font-weight: 700;
-  color: gray;
-}
 @media (min-width: 768px) {
   .chart__period {
     padding: 0 1em;
@@ -6776,10 +6786,11 @@ svg {
 .chart__period:last-child {
   padding-right: 0;
 }
-.chart__period:nth-child(3) {
+.chart__period--selected {
   color: #fff;
   background-color: #91C794;
   border-radius: 1em;
+  padding: 0 1em;
 }
 
 .card {
