@@ -65,7 +65,7 @@ const chartPeriodContainer = document.getElementsByClassName('chart__tab');
 const unSelected = 'chart__period';
 const selected = unSelected.concat('--selected');
 chartPeriodContainer[0].childNodes[2].className = selected;
-//
+
 // var autocomplete = require('autocompleter');
 // const input = document.getElementById("messageForUser");
 //
@@ -82,6 +82,21 @@ chartPeriodContainer[0].childNodes[2].className = selected;
 //     }
 // });
 
+const input = document.getElementById("messageForUser");
+
+autocomplete({
+    input: input,
+    fetch: function(text, update) {
+        text = text.toLowerCase();
+        var suggestions = members.filter(n => n.firstName.toLowerCase().startsWith(text))
+        update(suggestions);
+    },
+    onSelect: function(item) {
+        input.value = item.firstName;
+    },
+    minLength: 1,
+    emptyMsg: "Looks like there's no member with that name."
+});
 
 
 // FUNCTIONS
@@ -153,25 +168,30 @@ function compare(a, b) {
   return comparison;
 }
 
-// console.log(members.sort(compare));
 
-function sortMembers() {
-  let sortedMembers = [...members].sort(compare);
-  // console.log(sortedMembers);
-  let dropdownValues = document.getElementsByClassName('dropdown__value');
-  // console.log(dropdownValues);
-  for (i=0; i < 4; i++) {
-    let memberName = sortedMembers[i].firstName.concat(' ',sortedMembers[i].lastName)
-    dropdownValues[i].innerText = memberName;
-    // console.log(memberName)
-  }
-}
+// Temporarily commented this out to test auto-complete.js functionality.
+
+// console.log(members.sort(compare));
+//
+// function sortMembers() {
+//   let sortedMembers = [...members].sort(compare);
+//   // console.log(sortedMembers);
+//   let dropdownValues = document.getElementsByClassName('dropdown__value');
+//   // console.log(dropdownValues);
+//   for (i=0; i < 4; i++) {
+//     let memberName = sortedMembers[i].firstName.concat(' ',sortedMembers[i].lastName)
+//     dropdownValues[i].innerText = memberName;
+//     // console.log(memberName)
+//   }
+// }
 
 // FUNCTION DECLARATIONS
 
 close_element();
 submit_message();
-sortMembers();
+
+// Temporarily commented this out to test auto-complete.js functionality.
+// sortMembers();
 
 // EVENT HANDLERS
 
@@ -236,9 +256,6 @@ bellButton.addEventListener('click', () => {
     state = 'opened';
   }
 });
-
-
-
 
 
 // Filtering the values in the dropdown based upon the user's input
