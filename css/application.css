@@ -6492,6 +6492,7 @@ body {
 }
 .nav-top ul:last-child li:first-child {
   border-right: 1px solid #5155af;
+  padding: 1em;
 }
 
 .nav-left {
@@ -6537,7 +6538,7 @@ body {
   }
 }
 
-.bubble {
+#bubble {
   background-color: #b3d8b5;
   width: 8px;
   height: 8px;
@@ -6545,6 +6546,17 @@ body {
   top: -6px;
   right: 7px;
   border-radius: 100%;
+}
+
+#alertMenu {
+  display: none;
+  opacity: 0;
+  width: 20em;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  right: 11em;
+  box-shadow: 0px 0px 8px 0px rgba(16, 17, 36, 0.15);
 }
 
 .appLogo {
@@ -6860,60 +6872,67 @@ svg {
   }
 }
 
-.newMembers {
+.menu {
   padding: 0.5em;
   border: 1px solid #b6b6b6;
 }
-.newMembers__row {
+.menu__row {
   display: flex;
   align-items: center;
   padding: 0.5em 0;
   border-bottom: 1px solid gainsboro;
 }
-.newMembers__row:last-child {
+.menu__row:last-child {
   border-bottom: none;
 }
-.newMembers__pic {
+.menu__pic {
   margin: 0.5em;
 }
-.newMembers__infoBox p {
+.menu__chip {
+  border-radius: 100%;
+  background-color: #7477bf;
+  margin-right: 1em;
+  min-width: 2em;
+  text-align: center;
+}
+.menu__infoBox p {
   margin: 0;
 }
 @media (min-width: 1024px) {
-  .newMembers__infoBox p {
+  .menu__infoBox p {
     align-self: center;
     flex: 1;
   }
 }
 @media (min-width: 1024px) {
-  .newMembers__infoBox {
+  .menu__infoBox {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
 }
 @media (min-width: 1024px) {
-  .newMembers__info {
+  .menu__info {
     flex: 4;
   }
 }
-.newMembers__messageBox {
+.menu__messageBox {
   display: flex;
   align-items: center;
 }
 @media (min-width: 1024px) {
-  .newMembers__messageBox {
+  .menu__messageBox {
     width: 100%;
   }
 }
-.newMembers__message p {
+.menu__message p {
   margin: 0;
 }
-.newMembers__message p:last-child {
+.menu__message p:last-child {
   font-weight: 700;
 }
 @media (min-width: 1024px) {
-  .newMembers__message {
+  .menu__message {
     flex: 4;
   }
 }

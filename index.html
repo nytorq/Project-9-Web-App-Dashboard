@@ -65,11 +65,11 @@
     </li>
   </ul>
   <ul>
-    <li class="nav-top__item--desktop">
+    <li id="notificationsButton" class="nav-top__item--desktop">
       <svg width="32px" height="32px">
         <use href="#bell"/>
       </svg>
-      <span class="bubble"></span>
+      <span id="bubble"></span>
     </li>
     <li class="nav-top__item--desktop">
       <picture>
@@ -79,6 +79,32 @@
     <li class="nav-top__item--desktop">Josh Sullivan</li>
   </ul>
 </nav>
+<div id="alertMenu" class="menu">
+  <div class="menu__row">
+    <div class="menu__chip">
+      <i class="fas fa-envelope icon--white"></i>
+    </div><!--/.menu__pic-->
+    <div class="menu__messageBox">
+      <div class="menu__message">
+        <p>Victoria Chambers sent you message.</p>
+        <p>16 hours ago</p>
+      </div><!--/.menu__message-->
+      <i class="fas fa-chevron-right icon--primary"></i>
+    </div><!--/.menu__messageBox-->
+  </div><!--/.menu__row-->
+  <div class="menu__row">
+    <div class="menu__chip">
+      <i class="fas fa-file icon--white"></i>
+    </div><!--/.menu__pic-->
+    <div class="menu__messageBox">
+      <div class="menu__message">
+        <p>Your "Social Stats" report is ready for your review. Click here to view it.</p>
+        <p>18 hours ago</p>
+      </div><!--/.menu__message-->
+      <i class="fas fa-chevron-right icon--primary"></i>
+    </div><!--/.menu__messageBox-->
+  </div><!--/.menu__row-->
+</div><!--/.menu-->
 <nav class="nav-left">
   <ul>
     <li class="nav-left__item--active">
@@ -247,125 +273,125 @@
     <div class="grid__row">
       <div class="grid__col--6">
         <h2>New Members</h2>
-        <div class="newMembers">
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+        <div class="menu">
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-1.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__infoBox">
-              <div class="newMembers__info">
+            </div><!--/.menu__pic-->
+            <div class="menu__infoBox">
+              <div class="menu__info">
                 <p>Victoria Chambers</p>
                 <a href="mailto:vchambers@gmail.com">vchambers&#64;gmail.com</a>
-              </div><!--/.newMembers__info-->
+              </div><!--/.menu__info-->
               <p>10&#47;15&#47;15</p>
-            </div><!--/.newMembers__infoBox-->
+            </div><!--/.menu__infoBox-->
           </div>
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-2.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__infoBox">
-              <div class="newMembers__info">
+            </div><!--/.menu__pic-->
+            <div class="menu__infoBox">
+              <div class="menu__info">
                 <p>Dale Byrd</p>
                 <a href="mailto:dbyrd@gmail.com">dbyrd&#64;yahoo.com</a>
-              </div><!--/.newMembers__info-->
+              </div><!--/.menu__info-->
               <p>10&#47;15&#47;15</p>
-            </div><!--/.newMembers__infoBox-->
+            </div><!--/.menu__infoBox-->
           </div>
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-3.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__infoBox">
-              <div class="newMembers__info">
+            </div><!--/.menu__pic-->
+            <div class="menu__infoBox">
+              <div class="menu__info">
                 <p>Dawn Wood</p>
                 <a href="mailto:dwood@hotmail.com">dwood&#64;hotmail.com</a>
-              </div><!--/.newMembers__info-->
+              </div><!--/.menu__info-->
               <p>10&#47;15&#47;15</p>
-            </div><!--/.newMembers__infoBox-->
+            </div><!--/.menu__infoBox-->
           </div>
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-4.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__infoBox">
-              <div class="newMembers__info">
+            </div><!--/.menu__pic-->
+            <div class="menu__infoBox">
+              <div class="menu__info">
                 <p>Dan Oliver</p>
                 <a href="mailto:doliver@gmail.com">doliver&#64;gmail.com</a>
-              </div><!--/.newMembers__info-->
+              </div><!--/.menu__info-->
               <p>10&#47;15&#47;15</p>
-            </div><!--/.newMembers__infoBox-->
+            </div><!--/.menu__infoBox-->
           </div>
-        </div><!--/.newMembers-->
+        </div><!--/.menu-->
       </div><!--/.grid__col--6-->
       <div class="grid__col--6">
         <h2>Recent Activity</h2>
-        <div class="newMembers">
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+        <div class="menu">
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-1.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__messageBox">
-              <div class="newMembers__message">
+            </div><!--/.menu__pic-->
+            <div class="menu__messageBox">
+              <div class="menu__message">
                 <p>Victoria Chambers commented on YourApp's SEO Tips</p>
                 <p>4 hours ago</p>
-              </div><!--/.newMembers__message-->
+              </div><!--/.menu__message-->
               <i class="fas fa-chevron-right icon--primary"></i>
-            </div><!--/.newMembers__messageBox-->
-          </div><!--/.newMembers__row-->
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+            </div><!--/.menu__messageBox-->
+          </div><!--/.menu__row-->
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-2.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__messageBox">
-              <div class="newMembers__message">
+            </div><!--/.menu__pic-->
+            <div class="menu__messageBox">
+              <div class="menu__message">
                 <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
                 <p>5 hours ago</p>
-              </div><!--/.newMembers__message-->
+              </div><!--/.menu__message-->
               <i class="fas fa-chevron-right icon--primary"></i>
-            </div><!--/.newMembers__messageBox-->
-          </div><!--/.newMembers__row-->
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+            </div><!--/.menu__messageBox-->
+          </div><!--/.menu__row-->
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-3.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__messageBox">
-              <div class="newMembers__message">
+            </div><!--/.menu__pic-->
+            <div class="menu__messageBox">
+              <div class="menu__message">
                 <p>Dawn Wood commented on Facebook's Changes for 2016</p>
                 <p>5 hours ago</p>
-              </div><!--/.newMembers__message-->
+              </div><!--/.menu__message-->
               <i class="fas fa-chevron-right icon--primary"></i>
-            </div><!--/.newMembers__messageBox-->
-          </div><!--/.newMembers__row-->
-          <div class="newMembers__row">
-            <div class="newMembers__pic">
+            </div><!--/.menu__messageBox-->
+          </div><!--/.menu__row-->
+          <div class="menu__row">
+            <div class="menu__pic">
               <picture>
                 <img class="picture__profile" src="images/member-4.jpg">
               </picture>
-            </div><!--/.newMembers__pic-->
-            <div class="newMembers__messageBox">
-              <div class="newMembers__message">
+            </div><!--/.menu__pic-->
+            <div class="menu__messageBox">
+              <div class="menu__message">
                 <p>Dan Oliver posted YourApp's SEO Tips</p>
                 <p>1 day ago</p>
-              </div><!--/.newMembers__message-->
+              </div><!--/.menu__message-->
               <i class="fas fa-chevron-right icon--primary"></i>
-            </div><!--/.newMembers__messageBox-->
-          </div><!--/.newMembers__row-->
-        </div><!--/.newMembers-->
+            </div><!--/.menu__messageBox-->
+          </div><!--/.menu__row-->
+        </div><!--/.menu-->
       </div><!--/.grid__col--6-->
     </div><!--/.grid__row-->
     <div class="grid__row">

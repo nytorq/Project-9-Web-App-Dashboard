@@ -42,6 +42,7 @@
     justify-content: flex-end;
     & li:first-child {
       border-right: 1px solid darken($color-primary, 10%);
+      padding: 1em;
     }
   }
 }
@@ -80,7 +81,7 @@
   padding: 0 1em;
 }
 
-
+ 
 .nav-left ul {
   @include mq($break-t) {
       margin: 0 auto;
@@ -88,7 +89,7 @@
   }
 }
 
-.bubble {
+#bubble {
   background-color: lighten($color-accent, 10%);
   width: 8px;
   height: 8px;
@@ -96,4 +97,19 @@
   top: -6px;
   right: 7px;
   border-radius: 100%;
+}
+
+// #notificationsButton {
+//   padding: 1em;
+// }
+
+#alertMenu {
+  display: none;
+  opacity: 0;
+  width: 20em;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  right: 11em;
+  box-shadow: 0px 0px 8px 0px rgba(darken($color-primary, 50%), 0.15);
 }

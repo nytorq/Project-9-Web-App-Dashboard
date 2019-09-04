@@ -217,7 +217,25 @@ for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
   })
 }
 
-
+const alertMenu = document.getElementById('alertMenu');
+const bellButton = document.getElementById('notificationsButton');
+const bellBubble = document.getElementById('bubble')
+let state = 'closed';
+bellButton.addEventListener('click', () => {
+  if (state === 'opened') {
+    alertMenu.setAttribute("style", "display: none;")
+    window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+    bellButton.setAttribute("style", "background-color: none;")
+    state = 'closed';
+  } else if (state === 'closed') {
+    alertMenu.setAttribute("style", "display: inherit;")
+    window.setTimeout(function() {alertMenu.style.opacity = 1;}, 200);
+    bellBubble.setAttribute("style", "display: none;")
+    window.setTimeout(function() {bellBubble.style.opacity = 0;}, 200);
+    bellButton.setAttribute("style", "background-color: #5155af;")
+    state = 'opened';
+  }
+});
 
 
 

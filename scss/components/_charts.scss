@@ -85,7 +85,7 @@
   }
 }
 
-.newMembers {
+.menu {
   padding: 0.5em;
   border: 1px solid lighten($gray, 20%);
   @include e(row) {
@@ -99,6 +99,13 @@
   }
   @include e(pic) {
     margin: 0.5em;
+  }
+  @include e(chip) {
+    border-radius: 100%;
+    background-color: $color-primary;
+    margin-right: 1em;
+    min-width: 2em;
+    text-align: center;
   }
   @include e(infoBox) {
     & p {
