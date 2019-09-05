@@ -6649,7 +6649,6 @@ form > * {
 }
 
 .dropdown {
-  display: none;
   background-color: #fff;
   z-index: 2;
   box-shadow: 0px 0px 11px 2px rgba(44, 46, 95, 0.1);
@@ -6657,10 +6656,10 @@ form > * {
   position: absolute;
   width: 100%;
 }
-.dropdown p:first-child {
+.dropdown div:first-child {
   padding-top: 1em;
 }
-.dropdown p:last-child {
+.dropdown div:last-child {
   padding-bottom: 1em;
 }
 .dropdown__value {
@@ -6669,6 +6668,9 @@ form > * {
   transition: background-color 0.033s ease-in-out;
 }
 .dropdown__value:hover {
+  background-color: rgba(116, 119, 191, 0.25);
+}
+.dropdown__value--selected {
   background-color: rgba(116, 119, 191, 0.25);
 }
 

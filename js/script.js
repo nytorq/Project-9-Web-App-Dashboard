@@ -8,35 +8,40 @@ const members = [
     "firstName" : "Victoria",
     "lastName"  : "Chambers",
     "email"     : "vchambers@gmail.com",
-    "joinDate"  : "10/15/15"
+    "joinDate"  : "10/15/15",
+    "label"     : "Victoria Chambers"
   },
   {
     "userID": 1,
     "firstName" : "Dale",
     "lastName"  : "Byrd",
     "email"     : "dbyrd@gmail.com",
-    "joinDate"  : "10/15/15"
+    "joinDate"  : "10/15/15",
+    "label"     : "Dale Byrd"
   },
   {
     "userID": 2,
     "firstName" : "Dawn",
     "lastName"  : "Wood",
     "email"     : "dwood@hotmail.com",
-    "joinDate"  : "10/15/15"
+    "joinDate"  : "10/15/15",
+    "label"     : "Dawn Wood"
   },
   {
     "userID": 3,
     "firstName" : "Dan",
     "lastName"  : "Oliver",
     "email"     : "doliver@gmail.com",
-    "joinDate"  : "10/15/15"
+    "joinDate"  : "10/15/15",
+    "label"     : "Dan Oliver"
   },
   {
     "userID": 4,
     "firstName" : "Charlie",
     "lastName"  : "Prator",
     "email"     : "cprator@gmail.com",
-    "joinDate"  : "12/09/13"
+    "joinDate"  : "12/09/13",
+    "label"     : "Charlie Prator"
   }
 ];
 const trafficData = [
@@ -92,7 +97,7 @@ autocomplete({
         update(suggestions);
     },
     onSelect: function(item) {
-        input.value = item.firstName;
+        input.value = item.label;
     },
     minLength: 1,
     emptyMsg: "Looks like there's no member with that name."
@@ -197,13 +202,13 @@ submit_message();
 
 const search_inputs = document.querySelectorAll("input[type='search']");
 
-for (i=0; i < search_inputs.length; i++) {
-  let currentInput = search_inputs[i];
-  currentInput.addEventListener('keydown', () => {
-    let inputValue = currentInput.value;
-    console.log(inputValue);
-  })
-}
+// for (i=0; i < search_inputs.length; i++) {
+//   let currentInput = search_inputs[i];
+//   currentInput.addEventListener('keydown', () => {
+//     let inputValue = currentInput.value;
+//     console.log(inputValue);
+//   })
+// }
 
 function changeSelected(target)  {
   for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
