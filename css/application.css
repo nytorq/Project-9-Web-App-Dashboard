@@ -6671,6 +6671,7 @@ form > * {
   background-color: rgba(116, 119, 191, 0.25);
 }
 .dropdown__value--selected {
+  padding: 1em;
   background-color: rgba(116, 119, 191, 0.25);
 }
 
@@ -6765,6 +6766,14 @@ textarea:hover {
   color: #fff;
   border-radius: 0.25em;
   transition: opacity 0.5s ease-in-out;
+}
+
+#timezone_dropdown {
+  display: none;
+}
+
+#timezone_input:focus ~ #timezone_dropdown {
+  display: inherit;
 }
 
 .picture__profile {

@@ -59,6 +59,7 @@ form > * {
       background-color: rgba($color-primary, 0.25);
     }
     @include m(selected) {
+      padding: 1em;
       background-color: rgba($color-primary, 0.25);
     }
   }
@@ -162,4 +163,14 @@ textarea {
   color: $white;
   border-radius: 0.25em;
   transition: opacity 0.5s ease-in-out;
+}
+
+#timezone_dropdown {
+  display: none;
+}
+
+#timezone_input {
+  &:focus ~ #timezone_dropdown {
+    display: inherit;
+  }
 }

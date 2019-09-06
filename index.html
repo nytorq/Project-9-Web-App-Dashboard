@@ -401,12 +401,6 @@
           <div class="inputs">
             <input type="search" id="messageForUser" placeholder="Search for users">
             <i class="fas fa-search input-icon" aria-hidden="true"></i>
-            <!-- <div class="dropdown">
-              <p class="dropdown__value">Value 1</p>
-              <p class="dropdown__value">Value 2</p>
-              <p class="dropdown__value">Value 3</p>
-              <p class="dropdown__value">Value 4</p>
-            </div><!--/.dropdown-->
           </div><!--/.inputs-->
           <textarea placeholder="Message for user"></textarea>
           <button type="submit" class="button--primary" onclick="return false">Send</button>
@@ -434,8 +428,9 @@
             </div><!--/.track (or toggle, switch)-->
           </div><!--/.message-user__field-->
           <div class="inputs">
-            <input type="text" placeholder="Select time zone">
+            <input id="timezone_input" type="text" placeholder="Select time zone">
             <i class="fas fa-chevron-down input-icon" aria-hidden="true"></i>
+            <div id="timezone_dropdown" class="dropdown"><p class="dropdown__value">Eastern</p><p class="dropdown__value">Central</p><p class="dropdown__value">Mountain</p><p class="dropdown__value">Pacific</p></div><!--/.dropdown-->
           </div><!--/.inputs-->
           <div class="message-user__buttons">
             <button type="submit" class="button--primary" onclick="return false">Save</button>

@@ -71,22 +71,6 @@ const unSelected = 'chart__period';
 const selected = unSelected.concat('--selected');
 chartPeriodContainer[0].childNodes[2].className = selected;
 
-// var autocomplete = require('autocompleter');
-// const input = document.getElementById("messageForUser");
-//
-// function autocomplete({
-//     input: input,
-//     fetch: function(text, update) {
-//         text = text.toLowerCase();
-//         // you can also use AJAX requests instead of preloaded data
-//         var suggestions = members.filter(n => n.label.toLowerCase().startsWith(text))
-//         update(suggestions);
-//     },
-//     onSelect: function(item) {
-//         input.value = item.label;
-//     }
-// });
-
 const input = document.getElementById("messageForUser");
 
 autocomplete({
@@ -99,8 +83,9 @@ autocomplete({
     onSelect: function(item) {
         input.value = item.label;
     },
-    minLength: 1,
-    emptyMsg: "Looks like there's no member with that name."
+    minLength: 0,
+    emptyMsg: "Looks like there's no member with that name.",
+    preventSubmit: true
 });
 
 
@@ -160,6 +145,7 @@ function submit_message() {
     });
   }
 }
+
 
 function compare(a, b) {
   const lastNameA = a.lastName.toUpperCase();
@@ -263,4 +249,11 @@ bellButton.addEventListener('click', () => {
 });
 
 
-// Filtering the values in the dropdown based upon the user's input
+const tzDD = document.getElementById('timezone_dropdown');
+
+for (i=0 ; i < tzDD.childNodes.length ; i++) {
+  tzDD.childNodes[i].addEventListener('click', () => {
+    // console.log(tzDD.childNodes[i].textContent)
+    console.log('boom!')
+  })
+}

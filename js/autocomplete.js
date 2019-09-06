@@ -153,7 +153,7 @@
                   });
                   if (item === selected) {
                       // This is where I'm trying to get the selected modifier class to work -Charlie
-                      div.className += "dropdown__value--selected";
+                      div.className += "--selected";
                   }
                   fragment.appendChild(div);
               }
