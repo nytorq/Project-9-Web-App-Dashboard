@@ -251,9 +251,17 @@ bellButton.addEventListener('click', () => {
 
 const tzDD = document.getElementById('timezone_dropdown');
 
+function insertDropDownValue(value) {
+  const input = document.getElementById('timezone_input');
+  input.value = value;
+}
+
 for (i=0 ; i < tzDD.childNodes.length ; i++) {
-  tzDD.childNodes[i].addEventListener('click', () => {
+  let node = tzDD.childNodes[i];
+  node.addEventListener('click', () => {
     // console.log(tzDD.childNodes[i].textContent)
-    console.log('boom!')
+    // console.log('boom!');
+    let value = node.textContent;
+    insertDropDownValue(value);
   })
 }
