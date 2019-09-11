@@ -249,17 +249,22 @@ bellButton.addEventListener('click', () => {
 });
 
 
-const tzDD = document.getElementById('timezone_dropdown');
+const tz_dropDown = document.getElementById('timezone_dropdown');
+const tz_input = document.getElementById('timezone_input');
+
+tz_input.addEventListener('click', () => {
+  tz_dropDown.setAttribute("style", "display: inherit;")
+  // console.log('open sesame');
+})
 
 function insertDropDownValue(value) {
-  const input = document.getElementById('timezone_input');
-  input.value = value;
+  tz_input.value = value;
 }
 
-for (i=0 ; i < tzDD.childNodes.length ; i++) {
-  let node = tzDD.childNodes[i];
+for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
+  let node = tz_dropDown.childNodes[i];
   node.addEventListener('click', () => {
-    // console.log(tzDD.childNodes[i].textContent)
+    // console.log(tz_dropDown.childNodes[i].textContent)
     // console.log('boom!');
     let value = node.textContent;
     insertDropDownValue(value);
