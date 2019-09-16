@@ -169,8 +169,8 @@ textarea {
   display: none;
 }
 
-#timezone_input {
-  &:focus ~ #timezone_dropdown {
-    display: inherit;
-  }
-}
+// #timezone_input {
+//   &:focus ~ #timezone_dropdown {
+//     display: inherit;
+//   }
+// }

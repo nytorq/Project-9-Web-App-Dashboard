@@ -231,35 +231,44 @@ for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
 const alertMenu = document.getElementById('alertMenu');
 const bellButton = document.getElementById('notificationsButton');
 const bellBubble = document.getElementById('bubble')
-let state = 'closed';
+// let state = 'closed';
+alertMenu.setAttribute('state', 'closed');
 bellButton.addEventListener('click', () => {
-  if (state === 'opened') {
+  let alertMenuState = alertMenu.getAttribute('state');
+  if (alertMenuState === 'open') {
     alertMenu.setAttribute("style", "display: none;")
     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
     bellButton.setAttribute("style", "background-color: none;")
-    state = 'closed';
-  } else if (state === 'closed') {
+    alertMenuState = alertMenu.setAttribute('state', 'closed');
+  } else if (alertMenuState === 'closed') {
     alertMenu.setAttribute("style", "display: inherit;")
     window.setTimeout(function() {alertMenu.style.opacity = 1;}, 200);
     bellBubble.setAttribute("style", "display: none;")
     window.setTimeout(function() {bellBubble.style.opacity = 0;}, 200);
     bellButton.setAttribute("style", "background-color: #5155af;")
-    state = 'opened';
+    alertMenuState = alertMenu.setAttribute('state', 'open');
   }
 });
 
 
 const tz_dropDown = document.getElementById('timezone_dropdown');
 const tz_input = document.getElementById('timezone_input');
+tz_input.setAttribute('state','closed');
 
 tz_input.addEventListener('click', () => {
-  tz_dropDown.setAttribute("style", "display: inherit;")
-  // console.log('open sesame');
+  // let tz_input.getAttribute()
+    if (state === 'open') {
+      tz_dropDown.setAttribute("style", "display: none;");
+      state = 'closed';
+    } else if (state === 'closed') {
+      tz_dropDown.setAttribute("style", "display: inherit;");
+      state = 'open';
+    }
 })
 
-function insertDropDownValue(value) {
-  tz_input.value = value;
-}
+// function insertDropDownValue(value) {
+//   tz_input.value = value;
+// }
 
 for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
   let node = tz_dropDown.childNodes[i];
@@ -267,6 +276,24 @@ for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
     // console.log(tz_dropDown.childNodes[i].textContent)
     // console.log('boom!');
     let value = node.textContent;
-    insertDropDownValue(value);
+    tz_input.value = value;
+    tz_dropDown.setAttribute("style", "display: none;");
+    state = 'closed';
   })
 }
+
+// let activeElement = document.activeElement;
+// document.addEventListener('click', () => {
+//   activeElement = document.activeElement;
+//   console.log('The current active element is ' + activeElement + '.');
+//   // console.log('The current state is ' + state + '.');
+//   let body = document.getElementsByTagName('body');
+//   if ( activeElement === body[0]) {
+//     alertMenu.setAttribute("style", "display: none;")
+//     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+//     tz_dropDown.setAttribute("style", "display: none;");
+//     state = 'closed';
+//   }
+//   console.log('The current active element is ' + activeElement + '.');
+//   console.log('The current state is ' + state + '.');
+// })
