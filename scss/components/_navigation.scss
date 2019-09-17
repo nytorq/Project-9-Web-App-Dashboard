@@ -81,7 +81,7 @@
   padding: 0 1em;
 }
 
- 
+
 .nav-left ul {
   @include mq($break-t) {
       margin: 0 auto;
@@ -107,7 +107,7 @@
   display: none;
   opacity: 0;
   width: 20em;
-  position: absolute;
+  position: fixed;
   background-color: white;
   z-index: 2;
   right: 11em;

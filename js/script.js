@@ -253,16 +253,18 @@ bellButton.addEventListener('click', () => {
 
 const tz_dropDown = document.getElementById('timezone_dropdown');
 const tz_input = document.getElementById('timezone_input');
-tz_input.setAttribute('state','closed');
+tz_dropDown.setAttribute('state','closed');
 
 tz_input.addEventListener('click', () => {
+  console.log("Click! The active element is " + document.activeElement + ".")
+  let state = tz_dropDown.getAttribute('state');
   // let tz_input.getAttribute()
     if (state === 'open') {
       tz_dropDown.setAttribute("style", "display: none;");
-      state = 'closed';
+      state = tz_dropDown.setAttribute('state', 'closed');
     } else if (state === 'closed') {
       tz_dropDown.setAttribute("style", "display: inherit;");
-      state = 'open';
+      state = tz_dropDown.setAttribute('state', 'closed');
     }
 })
 
@@ -282,18 +284,33 @@ for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
   })
 }
 
-// let activeElement = document.activeElement;
-// document.addEventListener('click', () => {
-//   activeElement = document.activeElement;
-//   console.log('The current active element is ' + activeElement + '.');
-//   // console.log('The current state is ' + state + '.');
-//   let body = document.getElementsByTagName('body');
-//   if ( activeElement === body[0]) {
-//     alertMenu.setAttribute("style", "display: none;")
-//     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
-//     tz_dropDown.setAttribute("style", "display: none;");
-//     state = 'closed';
-//   }
-//   console.log('The current active element is ' + activeElement + '.');
-//   console.log('The current state is ' + state + '.');
+
+document.addEventListener('click', (e) => {
+  // let activeElement = document.activeElement;
+  // activeElement = document.activeElement;
+  let targetElement = e.target;
+  // console.log('The current active element is ' + activeElement + '.');
+  // console.log('The current state is ' + state + '.');
+  let body = document.getElementsByTagName('body');
+  console.log("You have just clicked " + e.target + ".");
+  // if ( targetElement !== tz_dropDown || targetElement !== alertMenu ) {
+  //   alertMenu.setAttribute("style", "display: none;")
+  //   alertMenu.setAttribute("state", "closed")
+  //   window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+  //   tz_dropDown.setAttribute("style", "display: none;");
+  //   tz_dropDown.setAttribute("state", "closed")
+  // }
+  if ( targetElement === body[0] ) {
+    alertMenu.setAttribute("style", "display: none;")
+    alertMenu.setAttribute("state", "closed")
+    window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+    tz_dropDown.setAttribute("style", "display: none;");
+    tz_dropDown.setAttribute("state", "closed")
+  }
+  // console.log('The current active element is ' + activeElement + '.');
+  // console.log('The current state is ' + state + '.');
+})
+
+// document.addEventListener('click', (e) => {
+//   console.log("You have just clicked " + e.target + ".");
 // })

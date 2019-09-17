@@ -6552,7 +6552,7 @@ body {
   display: none;
   opacity: 0;
   width: 20em;
-  position: absolute;
+  position: fixed;
   background-color: white;
   z-index: 2;
   right: 11em;
