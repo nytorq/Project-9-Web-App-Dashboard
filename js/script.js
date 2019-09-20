@@ -234,6 +234,11 @@ const bellBubble = document.getElementById('bubble')
 // let state = 'closed';
 alertMenu.setAttribute('state', 'closed');
 bellButton.addEventListener('click', () => {
+  console.log("Click! The active element is " + document.activeElement + ". It has the class name " + document.activeElement.class + ".")
+  // bellButton.focus();
+  // window.setTimeout(function() {bellButton.focus()}, 200);
+  // document.activeElement.setAttribute('style', "border: 1px solid red;")
+  event.preventDefault();
   let alertMenuState = alertMenu.getAttribute('state');
   if (alertMenuState === 'open') {
     alertMenu.setAttribute("style", "display: none;")
@@ -250,9 +255,17 @@ bellButton.addEventListener('click', () => {
   }
 });
 
+bellButton.addEventListener('blur', () =>{
+  window.setTimeout(function() {alertMenu.setAttribute("style", "display: none;");}, 150);
+  bellButton.setAttribute("style", "background-color: inherit;")
+  state = alertMenu.setAttribute('state', 'closed');
+});
 
 const tz_dropDown = document.getElementById('timezone_dropdown');
 const tz_input = document.getElementById('timezone_input');
+if (localStorage.getItem('tz_input') !== null) {
+  tz_input.value = localStorage.getItem('tz_input');
+};
 tz_dropDown.setAttribute('state','closed');
 
 tz_input.addEventListener('click', () => {
@@ -264,9 +277,14 @@ tz_input.addEventListener('click', () => {
       state = tz_dropDown.setAttribute('state', 'closed');
     } else if (state === 'closed') {
       tz_dropDown.setAttribute("style", "display: inherit;");
-      state = tz_dropDown.setAttribute('state', 'closed');
+      state = tz_dropDown.setAttribute('state', 'open');
     }
 })
+
+tz_input.addEventListener('blur', () =>{
+  window.setTimeout(function() {tz_dropDown.setAttribute("style", "display: none;");}, 150);
+  state = tz_dropDown.setAttribute('state', 'closed');
+});
 
 // function insertDropDownValue(value) {
 //   tz_input.value = value;
@@ -279,37 +297,39 @@ for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
     // console.log('boom!');
     let value = node.textContent;
     tz_input.value = value;
+    localStorage.setItem('tz_input', value);
     tz_dropDown.setAttribute("style", "display: none;");
     state = 'closed';
   })
 }
 
 
-document.addEventListener('click', (e) => {
-  // let activeElement = document.activeElement;
-  // activeElement = document.activeElement;
-  let targetElement = e.target;
-  // console.log('The current active element is ' + activeElement + '.');
-  // console.log('The current state is ' + state + '.');
-  let body = document.getElementsByTagName('body');
-  console.log("You have just clicked " + e.target + ".");
-  // if ( targetElement !== tz_dropDown || targetElement !== alertMenu ) {
-  //   alertMenu.setAttribute("style", "display: none;")
-  //   alertMenu.setAttribute("state", "closed")
-  //   window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
-  //   tz_dropDown.setAttribute("style", "display: none;");
-  //   tz_dropDown.setAttribute("state", "closed")
-  // }
-  if ( targetElement === body[0] ) {
-    alertMenu.setAttribute("style", "display: none;")
-    alertMenu.setAttribute("state", "closed")
-    window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
-    tz_dropDown.setAttribute("style", "display: none;");
-    tz_dropDown.setAttribute("state", "closed")
-  }
-  // console.log('The current active element is ' + activeElement + '.');
-  // console.log('The current state is ' + state + '.');
-})
+// document.addEventListener('click', (e) => {
+//   let activeElement = document.activeElement;
+//   activeElement = document.activeElement;
+//   let targetElement = e.target;
+//   console.log('The current active element is ' + activeElement + '.');
+//   console.log('The current state is ' + state + '.');
+//   let body = document.getElementsByTagName('body');
+//   console.log("You have just clicked " + e.target + ".");
+//   if ( targetElement !== tz_dropDown || targetElement !== alertMenu ) {
+//     alertMenu.setAttribute("style", "display: none;")
+//     alertMenu.setAttribute("state", "closed")
+//     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+//     tz_dropDown.setAttribute("style", "display: none;");
+//     tz_dropDown.setAttribute("state", "closed")
+//   }
+//   if (alertMenu.getAttribute('state') === 'open' && targetElement !== alertMenu) {
+//     alertMenu.setAttribute("style", "display: none;")
+//     alertMenu.setAttribute("state", "closed")
+//     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+//   } else if (tz_dropDown.getAttribute('state') === 'open' && targetElement !== tz_dropDown) {
+//     tz_dropDown.setAttribute("style", "display: none;");
+//     tz_dropDown.setAttribute("state", "closed")
+//   }
+//   console.log('The current active element is ' + document.activeElement + '.');
+//   console.log('The current state is ' + state + '.');
+// })
 
 // document.addEventListener('click', (e) => {
 //   console.log("You have just clicked " + e.target + ".");
