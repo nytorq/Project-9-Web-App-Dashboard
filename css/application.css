@@ -6728,6 +6728,7 @@ textarea:hover {
 .track p {
   color: #fff;
   margin: 1em;
+  font-size: 0.875em;
 }
 
 .switch {
