@@ -337,6 +337,64 @@ for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
 
 
 const toggles = document.getElementsByClassName('track');
+const emailNotifications = document.getElementById('emailNotifications');
+const publicProfile = document.getElementById('publicProfile');
+
+// localStorage.setItem('emailNotifications', 'on');
+// localStorage.setItem('publicProfile', 'on');
+
+// if (localStorage.getItem('publicProfile') !== null) {
+//   publicProfile.value = localStorage.getItem('tz_input');
+// };
+
+// const members = [
+//   {
+//     "userID": 0,
+//     "firstName" : "Victoria",
+//     "lastName"  : "Chambers",
+//     "email"     : "vchambers@gmail.com",
+//     "joinDate"  : "10/15/15",
+//     "label"     : "Victoria Chambers"
+//   },
+
+
+function turnToggle(toggleState, switchHandle, toggle, checkbox) {
+  let direction;
+  const toggleStyles = [
+    {
+      "direction"         : "on",
+      "bkgrndColor"       : "background-color: #7477bf;",
+      "position"          : "right: 2px;"
+    },
+    {
+      "direction"         : "off",
+      "bkgrndColor"      : "background-color: #838383;",
+      "position"          : "right: 59px;"
+    }
+  ]
+  if (toggleState === 'on') {
+    direction = 'off';
+    switchHandle[0].setAttribute('style', toggleStyles[1].position);
+    toggle.setAttribute('style', toggleStyles[1].bkgrndColor);
+    checkbox.removeAttribute('checked');
+  } else if (toggleState === 'off') {
+    direction = 'on';
+    switchHandle[0].setAttribute('style', toggleStyles[0].position);
+    toggle.setAttribute('style', toggleStyles[0].bkgrndColor);
+    checkbox.setAttribute('checked', 'true');
+  }
+  toggle.setAttribute('state', direction);
+  let toggleId = toggle.id;
+  localStorage.setItem(toggleId, direction);
+  toggleState = toggle.getAttribute('state');
+};
+//
+// function rememberToggles() {
+//   if (localStorage.getItem('publicProfile') !== null) {
+//     let toggleState = localStorage.getItem('publicProfile');
+//     turnToggle()
+//   }
+// }
 
 for (i=0 ; i < toggles.length ; i++) {
   let toggle = toggles[i];
@@ -344,22 +402,6 @@ for (i=0 ; i < toggles.length ; i++) {
   toggle.addEventListener('click', ()=> {
     let toggleState = toggle.getAttribute('state');
     let switchHandle = toggle.getElementsByClassName('switch');
-    // let toggleSwitch;
-    // console.log('Switch clicked!');
-    if (toggleState === 'on') {
-      switchHandle[0].setAttribute('style', 'right: 59px');
-      // switchHandle[0].setAttribute('style', 'left: 2px');
-      toggle.setAttribute('style', 'background-color: #838383;');
-      checkbox.removeAttribute('checked');
-      toggle.setAttribute('state', 'off');
-      toggleState = toggle.getAttribute('state');
-    } else if (toggleState === 'off') {
-      // switchHandle[0].setAttribute('style', 'left: 0px');
-      switchHandle[0].setAttribute('style', 'right: 2px');
-      toggle.setAttribute('style', 'background-color: #7477bf;');
-      checkbox.setAttribute('checked', 'true');
-      toggle.setAttribute('state', 'on');
-      toggleState = toggle.getAttribute('state');
-    }
+    turnToggle(toggleState, switchHandle, toggle, checkbox);
   })
 }
