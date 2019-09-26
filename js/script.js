@@ -340,21 +340,26 @@ const toggles = document.getElementsByClassName('track');
 
 for (i=0 ; i < toggles.length ; i++) {
   let toggle = toggles[i];
+  let checkbox = toggle.previousElementSibling;
   toggle.addEventListener('click', ()=> {
     let toggleState = toggle.getAttribute('state');
+    let switchHandle = toggle.getElementsByClassName('switch');
+    // let toggleSwitch;
     // console.log('Switch clicked!');
-    if (toggleState = 'on') {
-      let switchHandle = toggle.getElementsByClassName('switch');
-      switchHandle[0].removeAttribute('style', 'right: 0px');
-      switchHandle[0].setAttribute('style', 'left: 2px');
+    if (toggleState === 'on') {
+      switchHandle[0].setAttribute('style', 'right: 59px');
+      // switchHandle[0].setAttribute('style', 'left: 2px');
       toggle.setAttribute('style', 'background-color: #838383;');
+      checkbox.removeAttribute('checked');
       toggle.setAttribute('state', 'off');
-    // } else if (toggleState = 'off') {
-    //   let switchHandle = toggle.getElementsByClassName('switch');
-    //   switchHandle[0].setAttribute('style', 'left: 0px');
-    //   switchHandle[0].setAttribute('style', 'right: 0px');
-    //   toggle.setAttribute('style', 'background-color: #7477bf;');
-    //   toggle.setAttribute('state', 'on');
-    // }
+      toggleState = toggle.getAttribute('state');
+    } else if (toggleState === 'off') {
+      // switchHandle[0].setAttribute('style', 'left: 0px');
+      switchHandle[0].setAttribute('style', 'right: 2px');
+      toggle.setAttribute('style', 'background-color: #7477bf;');
+      checkbox.setAttribute('checked', 'true');
+      toggle.setAttribute('state', 'on');
+      toggleState = toggle.getAttribute('state');
+    }
   })
 }

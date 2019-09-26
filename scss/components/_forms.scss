@@ -12,7 +12,9 @@ form > * {
 .message-user {
   @include e(field) {
     & input[type="checkbox"] {
-      visibility: hidden;
+      // visibility: hidden;
+      position: relative;
+      top: -40px;
     }
     @include mq($break-d) {
       & label {

@@ -6626,7 +6626,8 @@ form > * {
 }
 
 .message-user__field input[type=checkbox] {
-  visibility: hidden;
+  position: relative;
+  top: -40px;
 }
 @media (min-width: 1024px) {
   .message-user__field label {
