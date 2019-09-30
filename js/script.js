@@ -263,9 +263,7 @@ bellButton.addEventListener('blur', () =>{
 
 const tz_dropDown = document.getElementById('timezone_dropdown');
 const tz_input = document.getElementById('timezone_input');
-if (localStorage.getItem('tz_input') !== null) {
-  tz_input.value = localStorage.getItem('tz_input');
-};
+
 tz_dropDown.setAttribute('state','closed');
 
 tz_input.addEventListener('click', () => {
@@ -358,35 +356,50 @@ const publicProfile = document.getElementById('publicProfile');
 //   },
 
 
-function turnToggle(toggleState, switchHandle, toggle, checkbox) {
-  let direction;
+function turnToggle(toggle, direction = null) {
+  let checkbox = toggle.previousElementSibling;
+  let toggleState = toggle.getAttribute('state');
+  let switchHandle = toggle.getElementsByClassName('switch');
   const toggleStyles = [
     {
-      "direction"         : "on",
       "bkgrndColor"       : "background-color: #7477bf;",
       "position"          : "right: 2px;"
     },
     {
-      "direction"         : "off",
-      "bkgrndColor"      : "background-color: #838383;",
+      "bkgrndColor"       : "background-color: #838383;",
       "position"          : "right: 59px;"
     }
   ]
-  if (toggleState === 'on') {
-    direction = 'off';
+
+  function turnToggleOff() {
     switchHandle[0].setAttribute('style', toggleStyles[1].position);
     toggle.setAttribute('style', toggleStyles[1].bkgrndColor);
     checkbox.removeAttribute('checked');
-  } else if (toggleState === 'off') {
-    direction = 'on';
+    toggle.setAttribute('state', 'off');
+    toggleState = toggle.getAttribute('state');
+  }
+
+  function turnToggleOn() {
     switchHandle[0].setAttribute('style', toggleStyles[0].position);
     toggle.setAttribute('style', toggleStyles[0].bkgrndColor);
     checkbox.setAttribute('checked', 'true');
+    toggle.setAttribute('state', 'on');
+    toggleState = toggle.getAttribute('state');
   }
-  toggle.setAttribute('state', direction);
-  let toggleId = toggle.id;
-  localStorage.setItem(toggleId, direction);
-  toggleState = toggle.getAttribute('state');
+
+  if (direction !== null) {
+    if (direction === 'on') {
+      turnToggleOn()
+    } else if (direction === 'off') {
+      turnToggleOff()
+    }
+  }
+  else if (direction === null && toggleState === 'on') {
+    turnToggleOff()
+  } else if (direction === null && toggleState === 'off') {
+    turnToggleOn()
+  }
+  localStorage.setItem(toggle.id, toggleState);
 };
 //
 // function rememberToggles() {
@@ -398,10 +411,23 @@ function turnToggle(toggleState, switchHandle, toggle, checkbox) {
 
 for (i=0 ; i < toggles.length ; i++) {
   let toggle = toggles[i];
-  let checkbox = toggle.previousElementSibling;
   toggle.addEventListener('click', ()=> {
-    let toggleState = toggle.getAttribute('state');
-    let switchHandle = toggle.getElementsByClassName('switch');
-    turnToggle(toggleState, switchHandle, toggle, checkbox);
+    turnToggle(toggle);
   })
 }
+
+// Retrieving values from localStorage (if something was stored)
+
+if (localStorage.length !== 0) {
+  tz_input.value = localStorage.getItem('tz_input');
+  emailNotificationsState = localStorage.getItem('emailNotifications');
+  publicProfileState = localStorage.getItem('publicProfile');
+  if (emailNotificationsState !== null) {
+    turnToggle(toggles[0], emailNotificationsState);
+  }
+  if (publicProfileState !== null) {
+    turnToggle(toggles[1], publicProfileState);
+  }
+  // console.log(emailNotificationsState + publicProfileState)
+  // turnToggle(toggleState, switchHandle, toggle, checkbox)
+};
