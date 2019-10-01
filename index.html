@@ -79,7 +79,7 @@
     <li class="nav-top__item--desktop">Josh Sullivan</li>
   </ul>
 </nav>
-<div id="alertMenu" class="menu">
+<div id="alertMenu" class="menu" state="closed">
   <div class="menu__row">
     <div class="menu__chip">
       <i class="fas fa-envelope icon--white"></i>
@@ -140,7 +140,7 @@
     <div class="grid__row">
       <div class="grid__col--8"><h2>Traffic</h2></div><!--/.grid__col--8-->
       <div class="grid__col--4">
-        <ul class="chart__tab"><li class="chart__period">Hourly</li><li class="chart__period">Daily</li><li class="chart__period">Weekly</li><li class="chart__period">Monthly</li></ul>
+        <ul class="chart__tab"><li class="chart__period">Hourly</li><li class="chart__period">Daily</li><li class="chart__period--selected">Weekly</li><li class="chart__period">Monthly</li></ul>
       </div><!--/.grid__col--4-->
     </div><!--/.grid__row-->
     <div class="grid__row">
@@ -432,7 +432,7 @@
           <div class="inputs">
             <input id="timezone_input" type="text" placeholder="Select time zone">
             <i class="fas fa-chevron-down input-icon" aria-hidden="true"></i>
-            <div id="timezone_dropdown" class="dropdown"><p class="dropdown__value">Eastern</p><p class="dropdown__value">Central</p><p class="dropdown__value">Mountain</p><p class="dropdown__value">Pacific</p></div><!--/.dropdown-->
+            <div id="timezone_dropdown" class="dropdown" state="closed"><p class="dropdown__value">Eastern</p><p class="dropdown__value">Central</p><p class="dropdown__value">Mountain</p><p class="dropdown__value">Pacific</p></div><!--/.dropdown-->
           </div><!--/.inputs-->
           <div class="message-user__buttons">
             <button type="submit" class="button--primary" onclick="return false">Save</button>

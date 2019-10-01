@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // VARIABLES
 
 const close_icons = document.getElementsByClassName('fa-times');
@@ -65,19 +67,26 @@ const trafficData = [
     "labels"  : ['Aug 2018', 'Sep 2018', 'Oct 2019', 'Nov 2018', 'Dec 2018', 'Jan 2019'],
     "array"   : [1999, 5230, 1250, 2385, 900, 1859]
   },
-]
+];
 const chartPeriodContainer = document.getElementsByClassName('chart__tab');
 const unSelected = 'chart__period';
 const selected = unSelected.concat('--selected');
-chartPeriodContainer[0].childNodes[2].className = selected;
-
 const input = document.getElementById("messageForUser");
+const search_inputs = document.querySelectorAll("input[type='search']");
+const alertMenu = document.getElementById('alertMenu');
+const bellButton = document.getElementById('notificationsButton');
+const bellBubble = document.getElementById('bubble');
+const timeZoneDropDown = document.getElementById('timezone_dropdown');
+const timeZoneinput = document.getElementById('timezone_input');
+const toggles = document.getElementsByClassName('track');
+const emailNotifications = document.getElementById('emailNotifications');
+const publicProfile = document.getElementById('publicProfile');
 
 autocomplete({
     input: input,
     fetch: function(text, update) {
         text = text.toLowerCase();
-        var suggestions = members.filter(n => n.firstName.toLowerCase().startsWith(text))
+        var suggestions = members.filter(n => n.firstName.toLowerCase().startsWith(text));
         update(suggestions);
     },
     onSelect: function(item) {
@@ -89,7 +98,7 @@ autocomplete({
 });
 
 
-// FUNCTIONS
+// FUNCTION EXPRESSIONS
 
 function removeParent(element) {
   let parent = element.parentElement;
@@ -97,8 +106,7 @@ function removeParent(element) {
 }
 
 function displayMessage(target) {
-  // console.log("Hey, I know what button is. See: " + e);
-  let parent = returnForm(target)
+  let parent = returnForm(target);
   let errorMessage = parent.lastElementChild;
   let successMessage = parent.lastElementChild.previousElementSibling;
   const array = [];
@@ -108,24 +116,20 @@ function displayMessage(target) {
   }
   if (array.includes(true)) {
     // any one of the form elements has been found to be empty
-    errorMessage.setAttribute("style", "display: inherit;")
+    errorMessage.setAttribute("style", "display: inherit;");
     window.setTimeout(function() {errorMessage.style.opacity = 1;}, 200);
   } else {
-    successMessage.setAttribute("style", "display: inherit;")
+    successMessage.setAttribute("style", "display: inherit;");
     window.setTimeout(function() {successMessage.style.opacity = 1;}, 200);
   }
-
-  // parent.lastElementChild.style.display = 'inherit';
-  // parent.lastElementChild.style.transition = 'display 3s ease-in-out';
 }
 
 function returnForm(e) {
   let currentNode = e;
   while (currentNode.tagName !== 'FORM') {
-    currentNode.tagName + '.';
-    currentNode = currentNode.parentNode
+    currentNode = currentNode.parentNode;
   }
-  return currentNode
+  return currentNode;
 }
 
 function close_element() {
@@ -133,7 +137,7 @@ function close_element() {
     let icon = close_icons[i];
     icon.addEventListener('click', () => {
       removeParent(icon);
-    })
+    });
   }
 }
 
@@ -141,11 +145,10 @@ function submit_message() {
   for (i=0 ; i < submit_buttons.length ; i++) {
     let button = submit_buttons[i];
     button.addEventListener('click', () => {
-      displayMessage(button)
+      displayMessage(button);
     });
   }
 }
-
 
 function compare(a, b) {
   const lastNameA = a.lastName.toUpperCase();
@@ -159,43 +162,6 @@ function compare(a, b) {
   return comparison;
 }
 
-
-// Temporarily commented this out to test auto-complete.js functionality.
-
-// console.log(members.sort(compare));
-//
-// function sortMembers() {
-//   let sortedMembers = [...members].sort(compare);
-//   // console.log(sortedMembers);
-//   let dropdownValues = document.getElementsByClassName('dropdown__value');
-//   // console.log(dropdownValues);
-//   for (i=0; i < 4; i++) {
-//     let memberName = sortedMembers[i].firstName.concat(' ',sortedMembers[i].lastName)
-//     dropdownValues[i].innerText = memberName;
-//     // console.log(memberName)
-//   }
-// }
-
-// FUNCTION DECLARATIONS
-
-close_element();
-submit_message();
-
-// Temporarily commented this out to test auto-complete.js functionality.
-// sortMembers();
-
-// EVENT HANDLERS
-
-const search_inputs = document.querySelectorAll("input[type='search']");
-
-// for (i=0; i < search_inputs.length; i++) {
-//   let currentInput = search_inputs[i];
-//   currentInput.addEventListener('keydown', () => {
-//     let inputValue = currentInput.value;
-//     console.log(inputValue);
-//   })
-// }
-
 function changeSelected(target)  {
   for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
     chartPeriodContainer[0].childNodes[i].className = unSelected;
@@ -204,157 +170,17 @@ function changeSelected(target)  {
   let labels = [];
   let data = [];
   for (i=0 ; i < trafficData.length ; i++) {
-    if (trafficData[i]['dataset'].includes(selectedPeriod)) {
-      labels = trafficData[i]['labels'];
-      data = trafficData[i]['array'];
-      // console.log(labels);
-      // console.log(trafficChart.data.datasets[0].label)
-      // console.log(data);
+    if (trafficData[i].dataset.includes(selectedPeriod)) {
+      labels = trafficData[i].labels;
+      data = trafficData[i].array;
       trafficChart.data.datasets[0].data = data;
       trafficChart.data.labels = labels;
-      trafficChart.update()
+      trafficChart.update();
       target.className = selected;
       return;
-    };
-  }
-}
-
-
-for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
-  let currentChartPeriod = chartPeriodContainer[0].childNodes[i];
-  currentChartPeriod.addEventListener('click', () => {
-    // console.log('A chartPeriod has been clicked.');
-    changeSelected(currentChartPeriod);
-  })
-}
-
-const alertMenu = document.getElementById('alertMenu');
-const bellButton = document.getElementById('notificationsButton');
-const bellBubble = document.getElementById('bubble')
-// let state = 'closed';
-alertMenu.setAttribute('state', 'closed');
-bellButton.addEventListener('click', () => {
-  console.log("Click! The active element is " + document.activeElement + ". It has the class name " + document.activeElement.class + ".")
-  // bellButton.focus();
-  // window.setTimeout(function() {bellButton.focus()}, 200);
-  // document.activeElement.setAttribute('style', "border: 1px solid red;")
-  event.preventDefault();
-  let alertMenuState = alertMenu.getAttribute('state');
-  if (alertMenuState === 'open') {
-    alertMenu.setAttribute("style", "display: none;")
-    window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
-    bellButton.setAttribute("style", "background-color: none;")
-    alertMenuState = alertMenu.setAttribute('state', 'closed');
-  } else if (alertMenuState === 'closed') {
-    alertMenu.setAttribute("style", "display: inherit;")
-    window.setTimeout(function() {alertMenu.style.opacity = 1;}, 200);
-    bellBubble.setAttribute("style", "display: none;")
-    window.setTimeout(function() {bellBubble.style.opacity = 0;}, 200);
-    bellButton.setAttribute("style", "background-color: #5155af;")
-    alertMenuState = alertMenu.setAttribute('state', 'open');
-  }
-});
-
-bellButton.addEventListener('blur', () =>{
-  window.setTimeout(function() {alertMenu.setAttribute("style", "display: none;");}, 150);
-  bellButton.setAttribute("style", "background-color: inherit;")
-  state = alertMenu.setAttribute('state', 'closed');
-});
-
-const tz_dropDown = document.getElementById('timezone_dropdown');
-const tz_input = document.getElementById('timezone_input');
-
-tz_dropDown.setAttribute('state','closed');
-
-tz_input.addEventListener('click', () => {
-  console.log("Click! The active element is " + document.activeElement + ".")
-  let state = tz_dropDown.getAttribute('state');
-  // let tz_input.getAttribute()
-    if (state === 'open') {
-      tz_dropDown.setAttribute("style", "display: none;");
-      state = tz_dropDown.setAttribute('state', 'closed');
-    } else if (state === 'closed') {
-      tz_dropDown.setAttribute("style", "display: inherit;");
-      state = tz_dropDown.setAttribute('state', 'open');
     }
-})
-
-tz_input.addEventListener('blur', () =>{
-  window.setTimeout(function() {tz_dropDown.setAttribute("style", "display: none;");}, 150);
-  state = tz_dropDown.setAttribute('state', 'closed');
-});
-
-// function insertDropDownValue(value) {
-//   tz_input.value = value;
-// }
-
-for (i=0 ; i < tz_dropDown.childNodes.length ; i++) {
-  let node = tz_dropDown.childNodes[i];
-  node.addEventListener('click', () => {
-    // console.log(tz_dropDown.childNodes[i].textContent)
-    // console.log('boom!');
-    let value = node.textContent;
-    tz_input.value = value;
-    localStorage.setItem('tz_input', value);
-    tz_dropDown.setAttribute("style", "display: none;");
-    state = 'closed';
-  })
+  }
 }
-
-
-// document.addEventListener('click', (e) => {
-//   let activeElement = document.activeElement;
-//   activeElement = document.activeElement;
-//   let targetElement = e.target;
-//   console.log('The current active element is ' + activeElement + '.');
-//   console.log('The current state is ' + state + '.');
-//   let body = document.getElementsByTagName('body');
-//   console.log("You have just clicked " + e.target + ".");
-//   if ( targetElement !== tz_dropDown || targetElement !== alertMenu ) {
-//     alertMenu.setAttribute("style", "display: none;")
-//     alertMenu.setAttribute("state", "closed")
-//     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
-//     tz_dropDown.setAttribute("style", "display: none;");
-//     tz_dropDown.setAttribute("state", "closed")
-//   }
-//   if (alertMenu.getAttribute('state') === 'open' && targetElement !== alertMenu) {
-//     alertMenu.setAttribute("style", "display: none;")
-//     alertMenu.setAttribute("state", "closed")
-//     window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
-//   } else if (tz_dropDown.getAttribute('state') === 'open' && targetElement !== tz_dropDown) {
-//     tz_dropDown.setAttribute("style", "display: none;");
-//     tz_dropDown.setAttribute("state", "closed")
-//   }
-//   console.log('The current active element is ' + document.activeElement + '.');
-//   console.log('The current state is ' + state + '.');
-// })
-
-// document.addEventListener('click', (e) => {
-//   console.log("You have just clicked " + e.target + ".");
-// })
-
-
-const toggles = document.getElementsByClassName('track');
-const emailNotifications = document.getElementById('emailNotifications');
-const publicProfile = document.getElementById('publicProfile');
-
-// localStorage.setItem('emailNotifications', 'on');
-// localStorage.setItem('publicProfile', 'on');
-
-// if (localStorage.getItem('publicProfile') !== null) {
-//   publicProfile.value = localStorage.getItem('tz_input');
-// };
-
-// const members = [
-//   {
-//     "userID": 0,
-//     "firstName" : "Victoria",
-//     "lastName"  : "Chambers",
-//     "email"     : "vchambers@gmail.com",
-//     "joinDate"  : "10/15/15",
-//     "label"     : "Victoria Chambers"
-//   },
-
 
 function turnToggle(toggle, direction = null) {
   let checkbox = toggle.previousElementSibling;
@@ -369,7 +195,7 @@ function turnToggle(toggle, direction = null) {
       "bkgrndColor"       : "background-color: #838383;",
       "position"          : "right: 59px;"
     }
-  ]
+  ];
 
   function turnToggleOff() {
     switchHandle[0].setAttribute('style', toggleStyles[1].position);
@@ -389,37 +215,95 @@ function turnToggle(toggle, direction = null) {
 
   if (direction !== null) {
     if (direction === 'on') {
-      turnToggleOn()
+      turnToggleOn();
     } else if (direction === 'off') {
-      turnToggleOff()
+      turnToggleOff();
     }
   }
   else if (direction === null && toggleState === 'on') {
-    turnToggleOff()
+    turnToggleOff();
   } else if (direction === null && toggleState === 'off') {
-    turnToggleOn()
+    turnToggleOn();
   }
   localStorage.setItem(toggle.id, toggleState);
-};
-//
-// function rememberToggles() {
-//   if (localStorage.getItem('publicProfile') !== null) {
-//     let toggleState = localStorage.getItem('publicProfile');
-//     turnToggle()
-//   }
-// }
+}
+
+// FUNCTION DECLARATIONS
+
+close_element();
+submit_message();
+
+// EVENT HANDLERS
+
+for (i=0 ; i < chartPeriodContainer[0].childNodes.length ; i++) {
+  let currentChartPeriod = chartPeriodContainer[0].childNodes[i];
+  currentChartPeriod.addEventListener('click', () => {
+    changeSelected(currentChartPeriod);
+  });
+}
+
+bellButton.addEventListener('click', () => {
+  event.preventDefault();
+  let alertMenuState = alertMenu.getAttribute('state');
+  if (alertMenuState === 'open') {
+    alertMenu.setAttribute("style", "display: none;");
+    window.setTimeout(function() {alertMenu.style.opacity = 0;}, 200);
+    bellButton.setAttribute("style", "background-color: none;");
+    alertMenuState = alertMenu.setAttribute('state', 'closed');
+  } else if (alertMenuState === 'closed') {
+    alertMenu.setAttribute("style", "display: inherit;");
+    window.setTimeout(function() {alertMenu.style.opacity = 1;}, 200);
+    bellBubble.setAttribute("style", "display: none;");
+    window.setTimeout(function() {bellBubble.style.opacity = 0;}, 200);
+    bellButton.setAttribute("style", "background-color: #5155af;");
+    alertMenuState = alertMenu.setAttribute('state', 'open');
+  }
+});
+
+bellButton.addEventListener('blur', () =>{
+  window.setTimeout(function() {alertMenu.setAttribute("style", "display: none;");}, 150);
+  bellButton.setAttribute("style", "background-color: inherit;");
+  state = alertMenu.setAttribute('state', 'closed');
+});
+
+timeZoneinput.addEventListener('click', () => {
+  let state = timeZoneDropDown.getAttribute('state');
+    if (state === 'open') {
+      timeZoneDropDown.setAttribute("style", "display: none;");
+      state = timeZoneDropDown.setAttribute('state', 'closed');
+    } else if (state === 'closed') {
+      timeZoneDropDown.setAttribute("style", "display: inherit;");
+      state = timeZoneDropDown.setAttribute('state', 'open');
+    }
+});
+
+timeZoneinput.addEventListener('blur', () =>{
+  window.setTimeout(function() {timeZoneDropDown.setAttribute("style", "display: none;");}, 150);
+  state = timeZoneDropDown.setAttribute('state', 'closed');
+});
+
+for (i=0 ; i < timeZoneDropDown.childNodes.length ; i++) {
+  let node = timeZoneDropDown.childNodes[i];
+  node.addEventListener('click', () => {
+    let value = node.textContent;
+    timeZoneinput.value = value;
+    localStorage.setItem('timeZoneinput', value);
+    timeZoneDropDown.setAttribute("style", "display: none;");
+    state = 'closed';
+  });
+}
 
 for (i=0 ; i < toggles.length ; i++) {
   let toggle = toggles[i];
   toggle.addEventListener('click', ()=> {
     turnToggle(toggle);
-  })
+  });
 }
 
-// Retrieving values from localStorage (if something was stored)
+// CHANGING THE DOM BASED UPON LOCALSTORAGE
 
 if (localStorage.length !== 0) {
-  tz_input.value = localStorage.getItem('tz_input');
+  timeZoneinput.value = localStorage.getItem('timeZoneinput');
   emailNotificationsState = localStorage.getItem('emailNotifications');
   publicProfileState = localStorage.getItem('publicProfile');
   if (emailNotificationsState !== null) {
@@ -428,6 +312,4 @@ if (localStorage.length !== 0) {
   if (publicProfileState !== null) {
     turnToggle(toggles[1], publicProfileState);
   }
-  // console.log(emailNotificationsState + publicProfileState)
-  // turnToggle(toggleState, switchHandle, toggle, checkbox)
-};
+}
