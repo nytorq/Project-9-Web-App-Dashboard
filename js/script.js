@@ -4,6 +4,19 @@
 
 const close_icons = document.getElementsByClassName('fa-times');
 const submit_buttons = document.querySelectorAll("button[type='submit']");
+const chartPeriodContainer = document.getElementsByClassName('chart__tab');
+const unSelected = 'chart__period';
+const selected = unSelected.concat('--selected');
+const input = document.getElementById("messageForUser");
+const search_inputs = document.querySelectorAll("input[type='search']");
+const alertMenu = document.getElementById('alertMenu');
+const bellButton = document.getElementById('notificationsButton');
+const bellBubble = document.getElementById('bubble');
+const timeZoneDropDown = document.getElementById('timezone_dropdown');
+const timeZoneinput = document.getElementById('timezone_input');
+const toggles = document.getElementsByClassName('track');
+const emailNotifications = document.getElementById('emailNotifications');
+const publicProfile = document.getElementById('publicProfile');
 const members = [
   {
     "userID": 0,
@@ -68,19 +81,6 @@ const trafficData = [
     "array"   : [1999, 5230, 1250, 2385, 900, 1859]
   },
 ];
-const chartPeriodContainer = document.getElementsByClassName('chart__tab');
-const unSelected = 'chart__period';
-const selected = unSelected.concat('--selected');
-const input = document.getElementById("messageForUser");
-const search_inputs = document.querySelectorAll("input[type='search']");
-const alertMenu = document.getElementById('alertMenu');
-const bellButton = document.getElementById('notificationsButton');
-const bellBubble = document.getElementById('bubble');
-const timeZoneDropDown = document.getElementById('timezone_dropdown');
-const timeZoneinput = document.getElementById('timezone_input');
-const toggles = document.getElementsByClassName('track');
-const emailNotifications = document.getElementById('emailNotifications');
-const publicProfile = document.getElementById('publicProfile');
 
 autocomplete({
     input: input,

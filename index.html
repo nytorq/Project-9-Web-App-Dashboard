@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
 </head>
+<body>
 <!--SVG bell icon-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:none;">
   <symbol>
@@ -34,7 +35,7 @@
 <!-- SVG members icon-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:none;">
   <symbol>
-      <path id="members"fill="#fff" d="M18 16.4c1.3-1.7 2-3.9 2-6.4 0-5.5-4-10-9-10S2 4.5 2 10c0 2.4.8 4.6 2 6.4-2.3.8-4 3-4 5.6v4c0 3.3 2.7 6 6 6h10c3.3 0 6-2.7 6-6v-4c0-2.6-1.7-4.8-4-5.6zM4 10c0-4.4 3.1-8 7-8s7 3.6 7 8-3.1 8-7 8-7-3.6-7-8zm16 15.5c0 2.5-2.2 4.5-4.9 4.5H6.9C4.2 30 2 28 2 25.5v-3c0-2.1 1.6-3.9 3.8-4.4C7.2 19.3 9 20 11 20s3.8-.7 5.2-1.9c2.2.5 3.8 2.2 3.8 4.4v3zM23 8h8c.6 0 1-.4 1-1s-.4-1-1-1h-8c-.6 0-1 .4-1 1s.4 1 1 1zm8 16h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zm0-12h-8c-.6 0-1 .4-1 1s.4 1 1 1h8c.6 0 1-.4 1-1s-.4-1-1-1zm0 6h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+      <path id="members" fill="#fff" d="M18 16.4c1.3-1.7 2-3.9 2-6.4 0-5.5-4-10-9-10S2 4.5 2 10c0 2.4.8 4.6 2 6.4-2.3.8-4 3-4 5.6v4c0 3.3 2.7 6 6 6h10c3.3 0 6-2.7 6-6v-4c0-2.6-1.7-4.8-4-5.6zM4 10c0-4.4 3.1-8 7-8s7 3.6 7 8-3.1 8-7 8-7-3.6-7-8zm16 15.5c0 2.5-2.2 4.5-4.9 4.5H6.9C4.2 30 2 28 2 25.5v-3c0-2.1 1.6-3.9 3.8-4.4C7.2 19.3 9 20 11 20s3.8-.7 5.2-1.9c2.2.5 3.8 2.2 3.8 4.4v3zM23 8h8c.6 0 1-.4 1-1s-.4-1-1-1h-8c-.6 0-1 .4-1 1s.4 1 1 1zm8 16h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zm0-12h-8c-.6 0-1 .4-1 1s.4 1 1 1h8c.6 0 1-.4 1-1s-.4-1-1-1zm0 6h-6c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/>
   </symbol>
 </svg>
 <!-- SVG Google Material Design menu icon-->
@@ -49,99 +50,97 @@
 </svg>
 <!-- SVG settings icon-->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:none;">
-  <path id="settings"fill="#fff" d="M26 24H14.9c-.4-1.7-2-3-3.9-3s-3.4 1.3-3.9 3H6c-.6 0-1 .4-1 1s.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-15 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM26 8H14.9c-.4-1.7-2-3-3.9-3S7.6 6.3 7.1 8H6c-.6 0-1 .4-1 1s.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-15 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM26 16h-2.1c-.4-1.7-2-3-3.9-3s-3.4 1.3-3.9 3H6c-.6 0-1 .4-1 1s.4 1 1 1h10.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-6 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM28 0H4C1.8 0 0 1.8 0 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zm2 28c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h24c1.1 0 2 .9 2 2v24z"/>
+  <path id="settings" fill="#fff" d="M26 24H14.9c-.4-1.7-2-3-3.9-3s-3.4 1.3-3.9 3H6c-.6 0-1 .4-1 1s.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-15 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM26 8H14.9c-.4-1.7-2-3-3.9-3S7.6 6.3 7.1 8H6c-.6 0-1 .4-1 1s.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-15 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM26 16h-2.1c-.4-1.7-2-3-3.9-3s-3.4 1.3-3.9 3H6c-.6 0-1 .4-1 1s.4 1 1 1h10.1c.4 1.7 2 3 3.9 3s3.4-1.3 3.9-3H26c.6 0 1-.4 1-1s-.4-1-1-1zm-6 3.4c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM28 0H4C1.8 0 0 1.8 0 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zm2 28c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h24c1.1 0 2 .9 2 2v24z"/>
 </svg>
-
-<nav class="nav-top">
-  <ul>
-    <li class="nav-top__item--mobile">
-      <svg width="32px" height="32px">
-        <use href="#menu2"/>
-      </svg>
-      <!-- <img id="menu" src="icons\icon-bars-solid.svg"> -->
-    </li>
-    <li class="nav-top__item--mobile">
-      <span class="appLogo"><span class="bold">Your</span><span class="light">App</span></span>&trade;
-    </li>
-  </ul>
-  <ul>
-    <li id="notificationsButton" class="nav-top__item--desktop" tabindex="-1">
-      <svg width="32px" height="32px">
-        <use href="#bell"/>
-      </svg>
-      <span id="bubble"></span>
-    </li>
-    <li class="nav-top__item--desktop">
-      <picture>
-        <img class="picture__profile" src="images/member-2.jpg">
-      </picture>
-    </li>
-    <li class="nav-top__item--desktop">Josh Sullivan</li>
-  </ul>
-</nav>
-<div id="alertMenu" class="menu" state="closed">
-  <div class="menu__row">
-    <div class="menu__chip">
-      <i class="fas fa-envelope icon--white"></i>
-    </div><!--/.menu__pic-->
-    <div class="menu__messageBox">
-      <div class="menu__message">
-        <p>Victoria Chambers sent you message.</p>
-        <p>16 hours ago</p>
-      </div><!--/.menu__message-->
-      <i class="fas fa-chevron-right icon--primary"></i>
-    </div><!--/.menu__messageBox-->
-  </div><!--/.menu__row-->
-  <div class="menu__row">
-    <div class="menu__chip">
-      <i class="fas fa-file icon--white"></i>
-    </div><!--/.menu__pic-->
-    <div class="menu__messageBox">
-      <div class="menu__message">
-        <p>Your "Social Stats" report is ready for your review. Click here to view it.</p>
-        <p>18 hours ago</p>
-      </div><!--/.menu__message-->
-      <i class="fas fa-chevron-right icon--primary"></i>
-    </div><!--/.menu__messageBox-->
-  </div><!--/.menu__row-->
-</div><!--/.menu-->
-<nav class="nav-left">
-  <ul>
-    <li class="nav-left__item--active">
-      <svg width="32px" height="32px">
-        <use href="#dashboard"/>
-      </svg>
-    </li>
-    <li class="nav-left__item--inactive">
-      <svg width="32px" height="32px">
-        <use href="#members"/>
-      </svg>
-    </li>
-    <li class="nav-left__item--inactive">
-      <svg width="32px" height="32px">
-        <use href="#visits"/>
-      </svg>
-    </li>
-    <li class="nav-left__item--inactive">
-      <svg width="32px" height="32px">
-        <use href="#settings"/>
-      </svg>
-    </li>
-  </ul>
-</nav>
-<body>
+  <nav class="nav-top">
+    <ul>
+      <li class="nav-top__item--mobile">
+        <svg width="32px" height="32px">
+          <use href="#menu2"/>
+        </svg>
+        <!-- <img id="menu" src="icons\icon-bars-solid.svg"> -->
+      </li>
+      <li class="nav-top__item--mobile">
+        <span class="appLogo"><span class="bold">Your</span><span class="light">App</span></span>&trade;
+      </li>
+    </ul>
+    <ul>
+      <li id="notificationsButton" class="nav-top__item--desktop" tabindex="-1">
+        <svg width="32px" height="32px">
+          <use href="#bell"/>
+        </svg>
+        <span id="bubble"></span>
+      </li>
+      <li class="nav-top__item--desktop">
+        <picture>
+          <img class="picture__profile" src="images/member-2.jpg" alt="Profile picture of Josh Sullivan">
+        </picture>
+      </li>
+      <li class="nav-top__item--desktop">Josh Sullivan</li>
+    </ul>
+  </nav>
+  <div id="alertMenu" class="menu" state="closed">
+    <div class="menu__row">
+      <div class="menu__chip">
+        <i class="fas fa-envelope icon--white"></i>
+      </div><!--/.menu__pic-->
+      <div class="menu__messageBox">
+        <div class="menu__message">
+          <p>Victoria Chambers sent you message.</p>
+          <p>16 hours ago</p>
+        </div><!--/.menu__message-->
+        <i class="fas fa-chevron-right icon--primary"></i>
+      </div><!--/.menu__messageBox-->
+    </div><!--/.menu__row-->
+    <div class="menu__row">
+      <div class="menu__chip">
+        <i class="fas fa-file icon--white"></i>
+      </div><!--/.menu__pic-->
+      <div class="menu__messageBox">
+        <div class="menu__message">
+          <p>Your "Social Stats" report is ready for your review. Click here to view it.</p>
+          <p>18 hours ago</p>
+        </div><!--/.menu__message-->
+        <i class="fas fa-chevron-right icon--primary"></i>
+      </div><!--/.menu__messageBox-->
+    </div><!--/.menu__row-->
+  </div><!--/.menu-->
+  <nav class="nav-left">
+    <ul>
+      <li class="nav-left__item--active">
+        <svg width="32px" height="32px">
+          <use href="#dashboard"/>
+        </svg>
+      </li>
+      <li class="nav-left__item--inactive">
+        <svg width="32px" height="32px">
+          <use href="#members"/>
+        </svg>
+      </li>
+      <li class="nav-left__item--inactive">
+        <svg width="32px" height="32px">
+          <use href="#visits"/>
+        </svg>
+      </li>
+      <li class="nav-left__item--inactive">
+        <svg width="32px" height="32px">
+          <use href="#settings"/>
+        </svg>
+      </li>
+    </ul>
+  </nav>
   <div class="container">
     <div class="grid__row">
       <div class="grid__col--4"><h1 class="tab">Dashboard</h1></div>
       <span class="grid__col--2"></span>
-      <div class="grid__col--6"><div class="inputs"><input type="search" placeholder="Search"><i class="fas fa-search input-icon" aria-hidden="true"></i></div><!--/.search--></div><!--/.grid__col--6-->
+      <div class="grid__col--6"><div class="inputs"><input type="search" placeholder="Search"><i class="fas fa-search input-icon" aria-hidden="true"></i></div><!--/.search--></div><!--/.grid__col-6-->
     </div><!--/.grid__row-->
     <div class="grid__row"><div class="banner grid__col--12"><p class="banner__text">Alert! Your dashboard numbers have something wrong with them, and you need to correct it before something bad happens!</p><i class="fas fa-times icon--white"></i></div></div><!--.grid__row-->
     <div class="grid__row">
-      <div class="grid__col--8"><h2>Traffic</h2></div><!--/.grid__col--8-->
+      <div class="grid__col--8"><h2>Traffic</h2></div><!--/.grid__col-8-->
       <div class="grid__col--4">
         <ul class="chart__tab"><li class="chart__period">Hourly</li><li class="chart__period">Daily</li><li class="chart__period--selected">Weekly</li><li class="chart__period">Monthly</li></ul>
-      </div><!--/.grid__col--4-->
+      </div><!--/.grid__col-4-->
     </div><!--/.grid__row-->
     <div class="grid__row">
       <div class="grid__col--12">
@@ -186,7 +185,7 @@
             }
         });
         </script>
-      </div><!--/.grid__col--6-->
+      </div><!--/.grid__col-6-->
     </div><!--/.grid__row-->
     <div class="grid__row">
       <div class="grid__col--6">
@@ -245,10 +244,10 @@
           });
           </script>
         </div><!--/.chart__area-->
-      </div><!--/.grid__col--6-->
+      </div><!--/.grid__col-6-->
     </div><!--/.grid__row-->
     <div class="grid__row">
-      <div class="grid__col--12"><h2>Social Stats</h2></div><!--/.grid__col--12-->
+      <div class="grid__col--12"><h2>Social Stats</h2></div><!--/.grid__col-12-->
     </div><!--/.grid__row-->
     <div class="grid__row">
       <div class="grid__col--4">
@@ -256,19 +255,19 @@
           <div class="card__icon-box"><i class="fab fa-twitter card__icon" aria-hidden="true"></i></div><!--/.card__icon-box-->
           <div class="card__value-box"><p class="card__title">Twitter</p><p class="card__value">10,345</p></div><!--/.card__value-box-->
         </div><!--/.card-->
-      </div><!--/.grid__col--4-->
+      </div><!--/.grid__col-4-->
       <div class="grid__col--4">
         <div class="card">
           <div class="card__icon-box"><i class="fab fa-facebook card__icon" aria-hidden="true"></i></div><!--/.card__icon-box-->
           <div class="card__value-box"><p class="card__title">Facebook</p><p class="card__value">8,739</p></div><!--/.card__value-box-->
         </div><!--/.card-->
-      </div><!--/.grid__col--4-->
+      </div><!--/.grid__col-4-->
       <div class="grid__col--4">
         <div class="card">
           <div class="card__icon-box"><i class="fab fa-google card__icon" aria-hidden="true"></i></div><!--/.card__icon-box-->
           <div class="card__value-box"><p class="card__title">Google</p><p class="card__value">2,530</p></div><!--/.card__value-box-->
         </div><!--/.card-->
-      </div><!--/.grid__col--4-->
+      </div><!--/.grid__col-4-->
     </div><!--/.grid__row-->
     <div class="grid__row">
       <div class="grid__col--6">
@@ -277,7 +276,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-1.jpg">
+                <img class="picture__profile" src="images/member-1.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__infoBox">
@@ -291,7 +290,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-2.jpg">
+                <img class="picture__profile" src="images/member-2.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__infoBox">
@@ -305,7 +304,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-3.jpg">
+                <img class="picture__profile" src="images/member-3.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__infoBox">
@@ -319,7 +318,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-4.jpg">
+                <img class="picture__profile" src="images/member-4.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__infoBox">
@@ -331,14 +330,14 @@
             </div><!--/.menu__infoBox-->
           </div>
         </div><!--/.menu-->
-      </div><!--/.grid__col--6-->
+      </div><!--/.grid__col-6-->
       <div class="grid__col--6">
         <h2>Recent Activity</h2>
         <div class="menu">
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-1.jpg">
+                <img class="picture__profile" src="images/member-1.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__messageBox">
@@ -352,7 +351,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-2.jpg">
+                <img class="picture__profile" src="images/member-2.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__messageBox">
@@ -366,7 +365,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-3.jpg">
+                <img class="picture__profile" src="images/member-3.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__messageBox">
@@ -380,7 +379,7 @@
           <div class="menu__row">
             <div class="menu__pic">
               <picture>
-                <img class="picture__profile" src="images/member-4.jpg">
+                <img class="picture__profile" src="images/member-4.jpg" alt="profile picture of human">
               </picture>
             </div><!--/.menu__pic-->
             <div class="menu__messageBox">
@@ -392,7 +391,7 @@
             </div><!--/.menu__messageBox-->
           </div><!--/.menu__row-->
         </div><!--/.menu-->
-      </div><!--/.grid__col--6-->
+      </div><!--/.grid__col-6-->
     </div><!--/.grid__row-->
     <div class="grid__row">
       <div class="grid__col--6">
@@ -407,7 +406,7 @@
           <p class="successMessage">Thanks for the message. We'll get back to you as soon as possible.</p>
           <p class="errorMessage">It looks like you've forgotten to fill out all of the fields above.</p>
         </form>
-      </div><!--/.grid__col--6-->
+      </div><!--/.grid__col-6-->
       <div class="grid__col--6">
         <h2>Settings</h2>
         <form class="message-user">
@@ -440,10 +439,10 @@
           </div>
           <p class="successMessage">Settings Saved.</p>
         </form>
-      </div><!--/.grid__col--6-->
+      </div><!--/.grid__col-6-->
     </div><!--/.grid__row-->
   </div><!-- /container -->
-<script type="text/javascript" src="js/autocomplete.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script src="js/autocomplete.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
