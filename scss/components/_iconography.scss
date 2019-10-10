@@ -21,3 +21,13 @@
   top: 1.25em;
   color: lighten($color-primary,15%);
 }
+
+#facebook_icon,
+#google_icon {
+  width: 30px;
+  padding: 0.45em;
+  @include mq($break-d) {
+    width: 40px;
+    padding: 0.65em;
+  }
+}
